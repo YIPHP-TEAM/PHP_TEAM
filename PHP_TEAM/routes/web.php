@@ -19,6 +19,8 @@
 Route::get('/login', 'Auth\LoginController@login');
 Route::get('/index', 'Front\IndexController@index');
 Route::get('/question', 'Front\IndexController@contact');
+Route::post('/question/save', 'Front\IndexController@save');
+Route::get('/question/complete', 'Front\IndexController@complete');
 Route::get('/user_point', 'Front\UserController@point');
 Route::get('/user_info', 'Front\UserController@info');
 Route::get('/item_detail', 'Front\ProductController@detail');
