@@ -31,8 +31,8 @@ class ContactRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'user_name' => 'required|string|max:50',
-            'contents' => 'required|max:400',
+            'user_id' => 'required|integer|min:1',
+            'comment' => 'required|max:400',
         ];
 
         return $rules;
@@ -41,8 +41,8 @@ class ContactRequest extends FormRequest
     public function attributes()
     {
         return [
-            'category_id' => __('post.category'),
-            'category_id.*' => __('post.category'),
+            'user_id' => 'ユーザーID',
+            'comment' => 'お問い合わせ内容',
         ];
     }
 }
