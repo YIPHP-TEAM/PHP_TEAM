@@ -32,7 +32,7 @@
                 </button>
 
                 <!-- ポイントの表示 -->
-                <div class="">{{$users->point}}</div>
+                <div class="">ポイントの表示</div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
@@ -52,10 +52,8 @@
                             <li class="nav-item dropdown">
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <!-- 管理者ページ -->
-                                    @if(($users->role) == 1)
+                                    
                                     <a class="dropdown-item" href="#">管理者TOPページ</a>
-                                    @endif
-
                                     <a class="dropdown-item" href="#">マイページ</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

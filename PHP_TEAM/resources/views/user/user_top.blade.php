@@ -18,18 +18,16 @@
                 
                 <div class="col-sm-8" style="text-align:right;">
                 <div class="paginate">
-                {{ $data->appends(Request::only('keyword'))->links() }}
+                
                 </div>
                 </div>
                 
                 <!-- 商品一覧 -->
                 <div class="d-flex flex-row flex-wrap">
-                        @foreach($items as $item)
-                        <a src="/image/{{$item->image}}" alt="" href="#"></a>
+                <!-- divで一覧作る -->
+                        <a src="#" alt="" href="#"></a>
                         <br>
-                        {{$item->name}} <br>
-                        {{$item->point}} <br>
-                        @endforeach
+
                 </div>
             </div>
         </div>

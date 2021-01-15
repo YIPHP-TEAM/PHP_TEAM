@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/admin_index', 'Admin\UserController@index');
+    Route::get('/admin_question', 'Admin\QuestionController@index');
+    Route::get('/user_create', 'Admin\UserController@create');
+    Route::get('/item_create', 'Admin\ItemController@create');
+});
