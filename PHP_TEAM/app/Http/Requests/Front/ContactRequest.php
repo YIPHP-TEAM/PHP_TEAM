@@ -32,7 +32,7 @@ class ContactRequest extends FormRequest
     {
         $rules = [
             'user_id' => 'required|integer|min:1',
-            'comment' => 'required|max:400',
+            'comment' => 'required|max:300',
         ];
 
         return $rules;

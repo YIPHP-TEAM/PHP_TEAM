@@ -2,6 +2,9 @@
 @section('content')
 
 <p>{{ Auth::user()->name }} さん、こんにちは</p>
+@if ($errors->has('name'))
+  <li>{{$errors->first('name')}}</li>
+@endif
     <form action="/question/save" method="POST">
         @csrf
         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
