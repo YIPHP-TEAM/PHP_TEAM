@@ -6,6 +6,5 @@
 <a href="/user_point">ポイント申請</a><br>
 <a href="/cart">カート内一覧</a><br>
 <a href="/user_info">ユーザ情報画面</a><br>
-<a href="/logout">ログア
-    ウト</a>
+<a href="/logout">ログアウト</a>
 
