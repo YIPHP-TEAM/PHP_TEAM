@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart_edit', 'Front\CartController@edit');
     Route::get('/cart_order', 'Front\OrderController@order');
     Route::get('/home', 'Front\HomeController@index')->name('home');
-    Route::get('/', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
