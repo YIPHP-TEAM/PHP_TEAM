@@ -25,21 +25,30 @@
             <div class="container">
                 <!-- ロゴ -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('/img/freeks.png') }}" alt="">
+                <img src="{{ asset('/img/yi_point_logo.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- ポイントの表示 -->
-                <div class="">ポイントの表示</div>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <!-- ログインしてない時のヘッダー -->
                         @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        <!-- ログイン状態のヘッダー -->
                         @else
+                            <!-- ポイントの表示 -->
+                            <div class="">ポイントの表示</div>
                             <li class="nav-item ml-2">
                                 <a class="nav-link text-black" href="#">ポイント申請</a>
                             </li>
@@ -70,14 +79,13 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>
-
-        <footer>
+        <!-- フッター -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <a class="nav-link text-black" href="#">お問い合わせ</a>
-        </footer>
+        </nav>
     </div>
 </body>
 </html>
