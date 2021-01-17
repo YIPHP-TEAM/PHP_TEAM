@@ -5,26 +5,52 @@
 <title>管理者Top画面</title>
 <link rel="" href="">
 </head>
-<body>
-<header>
-<a href=""><img src="" alt="ブランドロゴ"></a>
 
-<a href="">お問合せ一覧画面</a>
+  <body>
+    <div id="wrapper">
+      <header>
+        <div id="header_left">
+          <a href=""><img src="" alt="ブランドロゴ"></a>
+          <a href="">お問合せ一覧画面</a>
+        </div>
 
+        <div id="header_right">
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+          <ul class="nav">
+            <li class="has-sub">
+              <a href="">ユーザー作成画面</a>
+            </li>
 
-</header>
+            <li class="has-sub">
+              <a href="">商品作成画面</a>
+            </li>
+            <li class="has-sub">
+              <a href="">ログインユーザー名 ▼</a>
+              <ul class="sub">
+                <li>
+                  <a href="">ログアウト</a>
+                </li>
+                <li>
+                  <a href="">一般ユーザーTOP画面</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <article>
+        <section>
+          <form action="">
+            <input type="search" name="search" placeholder="ユーザー名">
+            <input type="submit" name="submit" value="検索">
+          </form>
+        </section>
+        <section>
+          <div id="users_list">
 
-<table>
-  
-    <tr>
-      <td>
-        
-      </td>
-      <td>
-      </td>
-      <td>
-      </td>
-    </tr>
-</table>
-</body>
+          </div>
+        </section>
+      </article>
+    </div>
+  </body>
 </html>
