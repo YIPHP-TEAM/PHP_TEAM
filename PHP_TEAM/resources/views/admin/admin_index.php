@@ -17,19 +17,19 @@
           <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <ul class="nav">
             <li class="has-sub">
-              <a href="">ユーザー作成画面</a>
+              <a href="">ユーザ作成画面</a>
             </li>
             <li class="has-sub">
               <a href="">商品作成画面</a>
             </li>
             <li class="has-sub">
-              <a href="">ログインユーザー名 ▼</a>
+              <a href="">ログインユーザ名 ▼</a>
               <ul class="sub">
                 <li>
                   <a href="">ログアウト</a>
                 </li>
                 <li>
-                  <a href="">一般ユーザーTOP画面</a>
+                  <a href="">一般ユーザTOP画面</a>
                 </li>
               </ul>
             </li>
