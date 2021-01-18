@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>管理者Top画面</title>
-<link rel="" href="">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>管理者Top画面</title>
+    <link rel="" href="">
+  </head>
 
   <body>
     <div id="wrapper">
@@ -13,14 +13,12 @@
           <a href=""><img src="" alt="ブランドロゴ"></a>
           <a href="">お問合せ一覧画面</a>
         </div>
-
-        <div id="header_right">
+        <nav>
           <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
           <ul class="nav">
             <li class="has-sub">
               <a href="">ユーザー作成画面</a>
             </li>
-
             <li class="has-sub">
               <a href="">商品作成画面</a>
             </li>
@@ -36,7 +34,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
       </header>
       <article>
         <section>
