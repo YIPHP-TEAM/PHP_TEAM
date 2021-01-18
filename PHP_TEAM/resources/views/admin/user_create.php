@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+  	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>ユーザー作成画面</title>
     <link rel="" href="">
   </head>
 
   <body>
     <div id="wrapper">
-    //共通ヘッダー
+    <!--▼グローバルナビゲーション部分-->
+    <?php include( $_SERVER['DOCUMENT_ROOT'] . '/admin_global_menu.php'); ?>
+
       <article>
           <h2>ユーザ作成画面</h2>
         <form action="" method="post">
