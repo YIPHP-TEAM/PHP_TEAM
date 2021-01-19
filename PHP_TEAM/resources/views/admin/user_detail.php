@@ -13,7 +13,6 @@ if (empty($id)) {
     header("Location: main.php");
     exit;
 }
-
 // PDOのインスタンスを取得
 $pdo = db_connect();
 
