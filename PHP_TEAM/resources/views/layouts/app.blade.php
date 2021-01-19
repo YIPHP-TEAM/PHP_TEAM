@@ -31,6 +31,9 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                <!-- ポイントの表示 -->
+                <div class=""></div>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
