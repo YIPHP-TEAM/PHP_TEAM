@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart', 'Front\CartController@index');
     Route::get('/cart_edit', 'Front\CartController@edit');
     Route::get('/cart_order', 'Front\OrderController@order');
-     Route::get('/home', 'Front\HomeController@index')->name('index');
+     Route::get('/home', 'Front\HomeController@index')->name('home');
     Route::get('/admin_index', 'Admin\UserController@index');
     Route::get('/admin_question', 'Admin\QuestionController@index');
     Route::get('/user_create', 'Admin\UserController@create');
