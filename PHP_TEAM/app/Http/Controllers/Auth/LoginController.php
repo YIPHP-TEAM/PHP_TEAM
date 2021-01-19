@@ -26,6 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
+    //indexリダイレクト追加
     protected $redirectTo = '/index';
 
     /**
