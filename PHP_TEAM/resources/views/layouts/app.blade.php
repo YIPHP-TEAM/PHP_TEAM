@@ -32,7 +32,7 @@
                 </button>
 
                 <!-- ポイントの表示 -->
-                <div class="">{{$users->point}}</div>
+                <div class=""></div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
