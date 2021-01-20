@@ -17,9 +17,10 @@
             @if ($points->isNotEmpty())
                 @foreach ($points as $point)
                 <div class="row">
-                    <div class="">
-                        <div class="col-md-4">達成項目名 {{$point->clear}}</div>
-                        <div class="col-md-12">詳細内容{{$point->content}}</div>
+                    <div class="col-md-12">
+                        <div class="">達成項目名 {{$point->clear}}</div>
+                        <br>
+                        <div class="">詳細内容{{$point->content}}</div>
                     </div>                
                 @endforeach
             @endif
