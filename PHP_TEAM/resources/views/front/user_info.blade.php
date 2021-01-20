@@ -9,20 +9,20 @@
                 <div>{{ Auth::user()->id }}</div>
                 <div>{{ Auth::user()->name }}</div>            
                 <br>
-                <div>初期選択言語</div>
-                <div>保有ポイント数</div>
+                <div>初期選択言語{{ Auth::user()->language }}</div>
+                <div>保有ポイント数{{ Auth::user()->point }}</div>
             </div>
-        
+
             <!-- 達成項目(ループ) -->
-            <div class="row">
-                <div class="">
-                    <div class="col-md-4">達成項目名</div>
-                    <div class="col-md-12">詳細内容</div>
-                </div>
-                <div class="">
-                    <div class="col-md-4">達成項目名</div>
-                    <div class="col-md-12">詳細内容</div>
-                </div>
+            @if ($points->isNotEmpty())
+                @foreach ($points as $point)
+                <div class="row">
+                    <div class="">
+                        <div class="col-md-4">達成項目名 {{$point->clear}}</div>
+                        <div class="col-md-12">詳細内容{{$point->content}}</div>
+                    </div>                
+                @endforeach
+            @endif
             </div>
         </div>
     </div>
