@@ -7,21 +7,21 @@
                 <form action="#" method="post">
                     <div class="form-group row">
                         <div class="">
-                            <input type="radio" class="form-control" name="title" value="{{  }}">
+                            <input type="radio" class="form-control" name="title" value="{{--{{  }}--}}">
                         </div>
                         <br>
                         <label class="">カリキュラムの合格</label>
                     </div>
                     <div class="form-group row">
                         <div class="">
-                            <input type="radio" class="form-control" name="title" value="{{  }}">
+                            <input type="radio" class="form-control" name="title" value="{{--{{  }}--}}">
                         </div>
                         <br>
                         <label class="">その他の貢献活動</label>
                     </div>
                     <div class="form-group row">
                         <div class="">
-                            <input type="radio" class="form-control" name="title" value="{{  }}">
+                            <input type="radio" class="form-control" name="title" value="{{--{{  }}--}}">
                         </div>
                         <br>
                         <label class="">資格取得</label>

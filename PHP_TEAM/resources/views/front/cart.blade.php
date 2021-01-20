@@ -30,7 +30,7 @@
                                 </div>
                                 <!-- 商品削除 -->
                                 <div lass="">
-                                    <a href="{{ action('', ['id' => $cart->id]) }}">削除</a>
+                                    <a href="{{--{{ action('', ['id' => $cart->id]) }}--}}">削除</a>
                                 </div>
                             </div>
                     </div>
