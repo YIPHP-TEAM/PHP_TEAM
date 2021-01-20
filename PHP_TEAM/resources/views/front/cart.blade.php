@@ -3,11 +3,11 @@
 @section('content')
     <div class="container-fluid">
         <div class="mx-auto" style="max-width:1200px">
-            <h1>カート内一覧画面</h1>
             <div class="row">
+                <h1>カート内一覧画面</h1>
                 <form action="#" method="post">
                     <!-- 商品一覧 -->
-                    <div class="">
+                    <div class="col-md-4">
                             <div class=""><img src="#" alt="">商品画像</div>
                             <br>
                             <div class="">商品名</div>

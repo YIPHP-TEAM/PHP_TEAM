@@ -51,9 +51,7 @@
                         <!-- ログイン状態のヘッダー -->
                         @else
                             <!-- ポイントの表示 -->
-                            <li class="nav-item ml-2">
-                                <div class="nav-link text-black">ポイントの表示</div>
-                            </li>
+                            <div class="">ポイントの表示</div>
                             <li class="nav-item ml-2">
                                 <a class="nav-link text-black" href="/user_point">ポイント申請</a>
                             </li>
@@ -90,9 +88,7 @@
         </main>
         <!-- フッター -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="nav-link text-black" href="/question">お問い合わせ</a>
-            </div>
+        <a class="nav-link text-black" href="/question">お問い合わせ</a>
         </nav>
     </div>
 </body>

@@ -4,14 +4,14 @@
     <div class="container-fluid">
         <div class="mx-auto" style="max-width:1200px">
             <!--↓↓ 検索フォーム ↓↓-->
-            <form class="form-group row" style="padding:20px 0; padding-left:0px;">
-                <div class="col-md-10">
-                    <input type="text" name="keyword" class="form-control" placeholder="ワードを入力してください">
-                </div>
-                <div class="col-md-2">
+            <div class="col-md-4" style="padding:20px 0; padding-left:0px;">
+                <form class="form-inline" action="{{url('/crud')}}">
+                    <div class="form-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="ワードを入力してください">
+                    </div>
                     <input type="submit" value="検索" class="btn btn-info">
-                </div>
-            </form>
+                </form>
+            </div>
                 
             <!-- 商品一覧 -->
             <div class="row">
