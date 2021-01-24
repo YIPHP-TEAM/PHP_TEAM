@@ -53,10 +53,10 @@
                             <!-- ポイントの表示 -->
                             <div class="">ポイントの表示</div>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" href="#">ポイント申請</a>
+                                <a class="nav-link text-black" href="/user_point">ポイント申請</a>
                             </li>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" id="post-link" href="#">カート内一覧</a>
+                                <a class="nav-link text-black" id="post-link" href="/cart">カート内一覧</a>
                             </li>
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -65,9 +65,9 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <!-- 管理者ページ -->
                                     @if (Auth::user()->role==1)
-                                    <a class="dropdown-item" href="#">管理者TOPページ</a>
+                                    <a class="dropdown-item" href="/admin_index">管理者TOPページ</a>
                                     @endif
-                                    <a class="dropdown-item" href="#">マイページ</a>
+                                    <a class="dropdown-item" href="/user_info">マイページ</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
@@ -88,7 +88,7 @@
         </main>
         <!-- フッター -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-        <a class="nav-link text-black" href="#">お問い合わせ</a>
+        <a class="nav-link text-black" href="/question">お問い合わせ</a>
         </nav>
     </div>
 </body>

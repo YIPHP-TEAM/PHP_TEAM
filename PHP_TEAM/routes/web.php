@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/question', 'Front\IndexController@contact');
     Route::post('/question/save', 'Front\IndexController@save');
     Route::get('/question/complete', 'Front\IndexController@complete');
+    Route::post('/point/save', 'Front\UserController@pointSave');
     Route::get('/user_point', 'Front\UserController@point');
     Route::get('/user_info', 'Front\UserController@info');
     Route::get('/item_detail', 'Front\ProductController@detail');
