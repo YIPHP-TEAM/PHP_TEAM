@@ -4,14 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Question;
 
 class QuestionController extends Controller
 {
     //一覧表示
     public function index() 
     {
-        $questions = Question::all;
-        return view('admin.question');
+        $questions = Question::all();
+        return view('admin.admin_global_menu');
     }
 
     //削除機能
