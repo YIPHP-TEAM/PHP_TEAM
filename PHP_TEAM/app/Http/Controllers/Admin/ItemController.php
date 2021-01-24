@@ -10,7 +10,7 @@ class ItemController extends Controller
 {
     public function add()
     {
-        return view('')
+        return view('');
     }
 
     public function create()
