@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //validation 書くかもしれない処理
+    //items table取得
+    protected $table = 'items';
+    
 }

@@ -6,6 +6,6 @@ class OrderController extends \App\Http\Controllers\Controller
 {
     public function order()
     {
-        return views('front.cart_order');
+        return view('front.cart_order');
     }
 }
