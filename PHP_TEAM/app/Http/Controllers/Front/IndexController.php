@@ -16,18 +16,24 @@ class IndexController extends \App\Http\Controllers\Controller
     {
         
         // todo: 商品詳細テーブル(items)のデータを取得し、8件ユーザTOP画面に表示させるための処理。
-        // $this->data['items'] = ProductModel::all()->limit(8);
+         $this->data['items'] = ProductModel::limit(8)->get();
         // dd($this->data['items']);
-        // return view('front.index', $this->data);
-        return view('front.index');
+         return view('front.index', $this->data);
+        // return view('front.index');
     }
+
+    public function detail($id)
+{
+
+}
 
     /**
      * contact 画面
      * 
      * 
      */
-    public function contact(){
+    public function contact()
+    {
         return view('front.question');
     }
 

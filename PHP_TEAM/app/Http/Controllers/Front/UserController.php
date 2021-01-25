@@ -13,13 +13,16 @@ class UserController extends \App\Http\Controllers\Controller
         return view('front.user_point');
     }
     
-    public function info(){
+    public function info()
+    {
         $points = PointModel::where('user_id', Auth::user()->id)->get();
         $this->data['points'] = $points;
        //dd($points);
         return view('front.user_info',$this->data);
     }
-    public function pointSave(PointRequest $request){
+
+    public function pointSave(PointRequest $request)
+    {
         // form solve
         //dd($request->all());
         // database save
@@ -31,7 +34,5 @@ class UserController extends \App\Http\Controllers\Controller
         $point->save();
         //dd($question);
         return redirect('/index');
-
-
     }
 }
