@@ -27,10 +27,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/point/save', 'Front\UserController@pointSave');
     Route::get('/user_point', 'Front\UserController@point');
     Route::get('/user_info', 'Front\UserController@info');
-    Route::get('/item_detail', 'Front\ProductController@detail');
+    Route::get('/item_detail/{item_id}', 'Front\ProductController@detail');
     Route::get('/cart', 'Front\CartController@index');
-    Route::get('/cart_edit', 'Front\CartController@edit');
+    Route::post('/cart/add', 'Front\CartController@itemToCart');
+    Route::post('/cart/edit', 'Front\CartController@edit');
     Route::get('/cart_order', 'Front\OrderController@order');
+    Route::post('/cart/delete','Front\CartController@delete');
     Route::get('/home', 'Front\HomeController@index')->name('home');
     Route::get('/admin_index', 'Admin\UserController@index');
     Route::get('/admin_question', 'Admin\QuestionController@index');

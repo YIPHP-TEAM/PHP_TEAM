@@ -15,34 +15,17 @@
                 
             <!-- 商品一覧 -->
             <div class="row">
+                @foreach ($items as $item)
                 <div class="col-md-3">
-                    <div class="">画像</div>
                     <div class="">
-                        <div class="">商品名</div>
-                        <div class="">必要ポイント数</div>
+                <a href="{{'/item_detail/'.$item->id}}"><img src="{{asset('img/items/'.$item->image)}}" alt=""></a>
+                    </div>
+                    <div class="">
+                        <div class="">{{$item->name}}</div>
+                        <div class="">必要ポイント：{{$item->point}} pt</div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="">画像</div>
-                    <div class="">
-                        <div class="">商品名</div>
-                        <div class="">必要ポイント数</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="">画像</div>
-                    <div class="">
-                        <div class="">商品名</div>
-                        <div class="">必要ポイント数</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="">画像</div>
-                    <div class="">
-                        <div class="">商品名</div>
-                        <div class="">必要ポイント数</div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
