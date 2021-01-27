@@ -1,0 +1,7 @@
+/* Bootstrapでできないcss、作りにくいcssはこちらに作ってください！ */
+
+/* 全体の文字間隔 */
+.font_space_all {
+    letter-spacing: 2px;
+}
+

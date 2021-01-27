@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="mx-auto" style="max-width:1200px">
-                <h1>ポイント申請画面</h1>
+<div class="container p-5">
+        <div class="mx-auto">
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">>ポイント申請画面</h1>
                 <form action="point/save" method="post">
                     @csrf
                     <div class="form-check">
@@ -54,5 +54,5 @@
                     <input type="submit" class="create-btn" value="申請する">
                 </form>       
         </div>
-    </div>
+</div>
 @endsection
