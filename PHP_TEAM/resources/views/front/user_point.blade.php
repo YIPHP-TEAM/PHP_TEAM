@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="mx-auto" style="max-width:1200px">
-                <h1>ポイント申請画面</h1>
+<div class="container p-5">
+        <div class="mx-auto">
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">>ポイント申請画面</h1>
                 <form action="point/save" method="post">
                     @csrf
                     <div class="form-check">
@@ -24,21 +24,21 @@
                         資格取得
                         </label>
                       </div>
-                    {{-- <div class="form-group row">
+                    {{-- <div class="form-group">
                         <div class="">
                             <input type="radio" class="form-control" name="title" value="{{  }}">
                         </div>
                         <br>
                         <label class="">カリキュラムの合格</label>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="">
                             <input type="radio" class="form-control" name="title" value="{{  }}">
                         </div>
                         <br>
                         <label class="">その他の貢献活動</label>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="">
                             <input type="radio" class="form-control" name="title" value="{{  }}">
                         </div>
@@ -46,13 +46,13 @@
                         <label class="">資格取得</label>
                     </div>
                     <br> --}}
-                    <div class="form-group row">
+                    <div class="form-group">
                         <div class="">
-                            <textarea class="form-control" name="content" rows="20"></textarea>
+                            <textarea class="form-control" name="content" rows="10"></textarea>
                         </div>
                     </div>
                     <input type="submit" class="create-btn" value="申請する">
                 </form>       
         </div>
-    </div>
+</div>
 @endsection
