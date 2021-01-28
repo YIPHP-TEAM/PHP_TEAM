@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-      <div class="mx-auto" style="max-width:1200px">
-        <h1>お問い合わせ</h1>
+    <div class="container p-5">
+      <div class="mx-auto">
+        <h1 class="text-center border-bottom border-secondary pb-3 mb-5">お問い合わせ</h1>
         <!-- ユーザーネーム -->
         <p>{{ Auth::user()->name }} さん、こんにちは</p>
         <div class="form-group row">

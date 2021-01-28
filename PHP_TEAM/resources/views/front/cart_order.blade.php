@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="mx-auto" style="max-width:1200px">
-            <h1>購入画面</h1>
+    <div class="container p-5">
+        <div class="mx-auto">
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">>購入画面</h1>
             <!-- 購入商品一覧 -->
             <div class="row">
                 <div class="">
