@@ -6,7 +6,8 @@
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">カート内一覧画面</h1>
             <div class="row">
                     <!-- 商品一覧 -->
-                    @if (!empty($cart))
+                    {{-- {{ dd($cart) }} --}}
+                    @if (!empty($cart) && $cart->isNotEmpty())
                         @foreach ($cart as $item)
                             <div class="col-md-4">
                                     <div class=""><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
@@ -50,19 +51,21 @@
                                     </div>
                             </div>
                         @endforeach
-                    @endif
-                    <!-- 合計表示・購入ボタン -->
-                    <div class="">  
-                        <div class="">合計ポイントの表示 {{Cart::total()}} Pt</div>
+                        <!-- 合計表示・購入ボタン -->
+                        <div class="">  
+                            <div class="">合計ポイントの表示 {{Cart::total()}} Pt</div>
                             <div class="">
                                 @if (Auth::user()->point >= Cart::total())
-                                 <a href="/cart_order">購入画面へ</a>
-                                 @else
-                                 ポイントが足りませんので購入できません。<br>
-                                 編集で商品数を調整してください。
+                                <a href="/cart_order">購入画面へ</a>
+                                @else
+                                ポイントが足りませんので購入できません。<br>
+                                編集で商品数を調整してください。
                                 @endif
                             </div>
                         </div>
+                    @else
+                    カート内には何も入っていません。
+                    @endif
             </div>
         </div>
     </div>
