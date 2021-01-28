@@ -53,7 +53,7 @@
                         @else
                             <!-- ポイントの表示 -->
                             <li class="nav-item ml-2">
-                                <div class="nav-link text-black">ポイントの表示</div>
+                                <div class="nav-link text-black">現在ポイント数:{{Auth::user()->point}} Pt</div>
                             </li>
                             <li class="nav-item ml-2">
                                 <a class="nav-link text-black" href="/user_point">ポイント申請</a>

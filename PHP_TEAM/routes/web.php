@@ -31,7 +31,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart', 'Front\CartController@index');
     Route::post('/cart/add', 'Front\CartController@itemToCart');
     Route::post('/cart/edit', 'Front\CartController@edit');
-    Route::get('/cart_order', 'Front\OrderController@order');
+    Route::get('/cart_order', 'Front\OrderController@orderConfirm');
+    Route::post('/order', 'Front\OrderController@order');
     Route::post('/cart/delete','Front\CartController@delete');
     Route::get('/home', 'Front\HomeController@index')->name('home');
     Route::get('/admin_index', 'Admin\UserController@index');
