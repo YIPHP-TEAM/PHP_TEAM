@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('message'))
+<div class="">
+    {{ session('message') }}
+</div>
+@endif
     <div class="container p-5">
         <div class="mx-auto">  
             <!-- ページタイトルとボーダー -->
