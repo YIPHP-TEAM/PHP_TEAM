@@ -56,7 +56,7 @@ class CartController extends \App\Http\Controllers\Controller
             ]);
         
         // $carts = Cart::content();
-        return back()->with('message', 'Cart ireru');
+        return back()->with('message', 'カート内に商品を入れました。');
     }
 
 }

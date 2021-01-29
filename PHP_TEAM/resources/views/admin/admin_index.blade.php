@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin_app')
 
 @section('content')
     <div class="container px-5">
@@ -15,17 +15,18 @@
                 
             <!-- 商品一覧 -->
             <div class="row">
-                @foreach ($items as $item)
-                <div class="col-md-3 mb-5">
-                    <div class="mb-3">
-                <a href="{{'/item_detail/'.$item->id}}"><img src="{{asset('img/items/'.$item->image)}}" alt=""></a>
+                <!-- @foreach ($ as $) -->
+                <div class="">
+                    <div class="">
+                    <!-- ユーザー画像 -->
+                        <!-- <a href="{{'/item_detail/'.$item->id}}"><img src="{{asset('img/items/'.$item->image)}}" alt=""></a> -->
                     </div>
                     <div class="">
-                        <div class="lead">{{$item->name}}</div>
-                        <div class="">必要ポイント：{{$item->point}} pt</div>
+                        <div class="">{{ユーザー名}}</div>
+                        <div class="">必要ポイント：{{選択言語}} pt</div>
                     </div>
                 </div>
-                @endforeach
+                <!-- @endforeach -->
             </div>
         </div>
     </div>
