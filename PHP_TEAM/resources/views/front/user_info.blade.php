@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="mx-auto" style="max-width:1200px">
-            <h1>ユーザー情報画面</h1>
+    <div class="container p-5">
+        <div class="mx-auto">
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー情報画面</h1>
             <!-- ユーザー情報 -->
             <div class="row">
                 <div>{{ Auth::user()->id }}</div>
@@ -17,13 +17,14 @@
             @if ($points->isNotEmpty())
                 @foreach ($points as $point)
                 <div class="row">
-                    <div class="">
-                        <div class="col-md-4">達成項目名 {{$point->clear}}</div>
-                        <div class="col-md-12">詳細内容{{$point->content}}</div>
-                    </div>                
+                    <div class="col-md-12">
+                        <div class="">達成項目名 {{$point->clear}}</div>
+                        <br>
+                        <div class="">詳細内容{{$point->content}}</div>
+                    </div>       
+                </div>
                 @endforeach
             @endif
-            </div>
         </div>
     </div>
 @endsection

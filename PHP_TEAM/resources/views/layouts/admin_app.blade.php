@@ -24,7 +24,7 @@
     <div id="app" class="font_space_all">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <!-- ロゴ -->
+                <!-- ロゴ（リンクなし）-->
                 <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('/img/yi_point_logo.png') }}" alt="">
                 </a>
@@ -53,24 +53,20 @@
                         @else
                             <!-- ポイントの表示 -->
                             <li class="nav-item ml-2">
-                                <div class="nav-link text-black">現在ポイント数:{{Auth::user()->point}} Pt</div>
+                                <a class="nav-link text-black" href="/admin_question">お問い合わせ一覧</a>
                             </li>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" href="/user_point">ポイント申請</a>
+                                <a class="nav-link text-black" href="/user_point">ユーザー作成</a>
                             </li>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" id="post-link" href="/cart">カート内一覧</a>
+                                <a class="nav-link text-black" id="post-link" href="/cart">商品作成</a>
                             </li>
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                             <li class="nav-item dropdown">
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <!-- 管理者ページ -->
-                                    @if (Auth::user()->role==1)
-                                    <a class="dropdown-item" href="/admin_index">管理者TOPページ</a>
-                                    @endif
-                                    <a class="dropdown-item" href="/user_info">マイページ</a>
+                                    <a class="dropdown-item" href="/index">一般ユーザー画面へ</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

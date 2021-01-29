@@ -6,45 +6,39 @@
             <h1>購入画面</h1>
             <!-- 購入商品一覧 -->
             <div class="row">
-                <div class="">
-                    <div class=""><img src="" alt=""></div>
-                    <div class="">商品名</div>
-                    <div class="">必要ポイント数</div>
-                    <div class="">数量</div>
-                </div>
-                <br>
-                <div class="">
-                    <div class=""><img src="" alt=""></div>
-                    <div class="">商品名</div>
-                    <div class="">必要ポイント数</div>
-                    <div class="">数量</div>
-                </div>
-                <br>
-                <div class="">
-                    <div class=""><img src="" alt=""></div>
-                    <div class="">商品名</div>
-                    <div class="">必要ポイント数</div>
-                    <div class="">数量</div>
-                </div>
-            </div>
+                @if (!empty($cart))
+                @foreach ($cart as $item)
+                    <div class="col-md-4">
+                            <div class=""><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
+                            <br>
+                            <div class="">商品名{{$item->name}}</div>
+                            <br>
+                            <div class="">
+                                <div class="">注文数{{$item->qty}}</div>
+                                <div class="">必要ポイント{{$item->price}}</div>
+                            </div>
+                    </div>
+                @endforeach
+            @endif
 
             <!-- 購入確認 -->
-            <form action="#" method="post">
                 <div class="row">
                     <div class="">
                         <div class="">注文内容</div>
                         <br>
                         <div class="">
-                            <div class="">注文数合計</div>
+                            <div class="">注文数合計{{Cart::count()}}</div>
                             <br>
-                            <div class="">注文合計額</div>
+                            <div class="">注文合計額{{Cart::total()}}</div>
                         </div>
                     </div>
                     <div class="">
+                      <form action="/order" method="post">
+                        @csrf
                         <input type="submit" class="create-btn" value="購入する">
+                      </form>
                     </div>
                 </div>
-            </form>
         </div>
     </div>
 @endsection
