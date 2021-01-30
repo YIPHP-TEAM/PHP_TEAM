@@ -8,10 +8,17 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // $users = User::all();
-        return view('admin.admin_index');
+        $cond_title = $request->cond_title;
+      if ($cond_title != '') {
+          // 検索されたら検索結果を取得する
+          $users = User::where('name', 'like', "%$cond_title%")->get();
+      } else {
+          // それ以外はすべてのユーザーを取得する
+          $users = User::all();
+      }
+      return view('admin.admin_index', ['users' => $users, 'cond_title' => $cond_title]);
     }
 
     public function create(Request $request)
