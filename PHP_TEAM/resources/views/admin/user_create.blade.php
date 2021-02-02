@@ -5,7 +5,7 @@
         <div class="mx-auto">  
             <!-- ページタイトルとボーダー -->
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー作成画面</h1>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{action('Admin\UserController@create') }}" enctype="multipart/form-data">
                         @csrf
                         <!-- 画像のアップロード -->
                         <!-- ＊＊＊要編集＊＊＊ -->
@@ -56,7 +56,11 @@
                         <div class="form-group row">
                             <label for="role" class="col-md-4 col-form-label text-md-right">権限</label>
                             <div class="col-md-6">
-                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
+                                <select id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
+                                  <option value="" selected disabled>選択して下さい</option>
+                                  <option value="{{ old('role') }}">0</option>
+                                  <option value="{{ old('role') }}">1</option>
+                                </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -68,7 +72,8 @@
                         <div class="form-group row">
                             <label for="language" class="col-md-4 col-form-label text-md-right">言語</label>
                             <div class="col-md-6">
-                                <input id="language" type="text" class="form-control @error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>
+                                <input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>PHP
+                                <input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>JAVA
                                 @error('language')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
