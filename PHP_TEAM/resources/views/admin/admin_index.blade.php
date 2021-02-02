@@ -21,8 +21,7 @@
                     <!-- ユーザー画像 -->
                         <a href="{{'/user_detail/'.$user->id}}"></a>
                     </div>
-                    <div class="">
-                        <div class="">{{$user->image}}</div>
+                    <div class=""><img src="{{asset('storage/img/'.$user->image)}}"><div class="">
                         <div class="">{{$user->name}}</div>
                         <div class="">{{$user->language}}</div>
                     </div>
