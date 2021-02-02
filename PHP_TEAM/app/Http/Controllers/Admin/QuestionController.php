@@ -12,7 +12,7 @@ class QuestionController extends Controller
     public function index() 
     {
         $questions = Question::all();
-        return view('admin.admin_global_menu');
+        return view('admin.admin_question', ['questions' => $questions]);
     }
 
     //削除機能
@@ -20,7 +20,7 @@ class QuestionController extends Controller
     {
         $question = Question::find($request->id);
         $question->delete();
-        return redirect('/admin_index');
+        return redirect('/admin_question');
     }
 
 
