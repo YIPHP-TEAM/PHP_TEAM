@@ -41,4 +41,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/item_create', 'Admin\ItemController@add');
     Route::post('/admin_question/delete/{id}', 'Admin\QuestionController@delete');
     Route::get('/user_create', 'Admin\UserController@add');
+    Route::post('/item_create', 'Admin\ItemController@create');
 });
