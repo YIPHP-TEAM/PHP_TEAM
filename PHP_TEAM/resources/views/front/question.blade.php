@@ -15,6 +15,7 @@
           @csrf
           <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
           <textarea name="comment" rows="4" cols="40"></textarea>
+          {!! formErr('comment') !!}
           <input type="submit" value="お問い合わせ">
           </form>
         </div>
