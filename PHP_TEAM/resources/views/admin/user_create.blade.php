@@ -58,8 +58,8 @@
                             <div class="col-md-6">
                                 <select id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
                                   <option value="" selected disabled>選択して下さい</option>
-                                  <option value="{{ old('role') }}">0</option>
-                                  <option value="{{ old('role') }}">1</option>
+                                  <option value="0">0</option>
+                                  <option value="1">1</option>
                                 </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">
@@ -72,8 +72,8 @@
                         <div class="form-group row">
                             <label for="language" class="col-md-4 col-form-label text-md-right">言語</label>
                             <div class="col-md-6">
-                                <input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>PHP
-                                <input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="{{ old('language') }}" required autocomplete="language" autofocus>JAVA
+                                <label><input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="PHP" required autocomplete="language" autofocus>PHP</label>
+                                <label><input id="language" type="radio" class="form-control @error('language') is-invalid @enderror" name="language" value="JAVA" required autocomplete="language" autofocus>JAVA</label>
                                 @error('language')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -96,15 +96,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
