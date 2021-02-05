@@ -34,11 +34,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/cart_order', 'Front\OrderController@orderConfirm');
     Route::post('/order', 'Front\OrderController@order');
     Route::post('/cart/delete','Front\CartController@delete');
+    Route::get('/order_commit','Front\OrderController@orderCommit');
     Route::get('/home', 'Front\HomeController@index')->name('home');
     Route::get('/admin_index', 'Admin\UserController@index');
     Route::get('/admin_question', 'Admin\QuestionController@index');
     Route::post('/user_create', 'Admin\UserController@create');
-    Route::get('/item_create', 'Admin\ItemController@create');
-    Route::post('/admin_question/delete', 'Admin\QuestionController@delete');
+    Route::get('/item_create', 'Admin\ItemController@add');
+    Route::post('/admin_question/delete/{id}', 'Admin\QuestionController@delete');
     Route::get('/user_create', 'Admin\UserController@add');
 });

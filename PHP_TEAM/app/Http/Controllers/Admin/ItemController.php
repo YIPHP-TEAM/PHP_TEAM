@@ -10,20 +10,27 @@ class ItemController extends Controller
 {
     public function add()
     {
-        return view('');
+        return view('admin.item_create');
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $item = new ItemModel();
-        $item->id = $request->id;
-        $item->name = $request->name;
-        $item->point = $request->point;
-        $item->stock = $request->stock;
-        //画像保存追記
-        $item->created_at = now();
+        $item = new Item;
+        $form = $request->all();
+        if (isset($form['image'])) {
+            $path = $request->file('image')->store('public/img');
+            $item->image = basename($path);
+        } else {
+            $item->image = null;
+        }
+
+        unset($form['_token']);
+        unset($form['image']);
+
+        $item->fill($form);
         $item->save();
 
-        return redirect('');
+
+        return redirect('/admin_index'); 
     }
 }

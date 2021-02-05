@@ -51,7 +51,8 @@ class CartController extends \App\Http\Controllers\Controller
                 'qty' => $request->quantity,
                 'price' => $item->point,
                 'weight' => '1',
-                'options' => ['photo_path'=> $item->image]
+                'options' => ['photo_path'=> $item->image,
+                'stock' => $item->stock],
                 ]
             ]);
         
