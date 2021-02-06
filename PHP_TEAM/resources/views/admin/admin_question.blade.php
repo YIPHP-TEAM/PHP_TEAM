@@ -17,8 +17,8 @@
                     <div class="col-md-2">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     </div>
-                    <form action="{{action('Admin\QuestionController@delete')}}" method="post">
-                    @csrf
+                    <form action="/admin_question/delete/{{$question->id}}" method="post">
+                    {{ csrf_field() }}
                     <div class="col-md-2">
                         <button type="submit" class="btn">削除</button>
                     </div>

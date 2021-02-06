@@ -41,7 +41,7 @@ class PointRequest extends FormRequest
     public function attributes()
     {
         return [
-            'clear' => 'クリア',
+            'clear' => '達成項目',
             'content' => 'ポイント申請内容',
         ];
     }

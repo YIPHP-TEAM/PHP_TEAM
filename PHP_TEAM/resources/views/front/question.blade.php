@@ -17,7 +17,7 @@
           <textarea name="comment" rows="4" cols="120"></textarea>
           <div class="col-md-12 clearfix">
             <input class="float-right mt-2 p-2" type="submit" value="お問い合わせ">
-          </div>
+          </div>         
           </form>
         </div>
       </div>  
