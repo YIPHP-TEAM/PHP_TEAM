@@ -17,13 +17,15 @@
             <div class="row">
                 @foreach ($items as $item)
                 <div class="col-md-3 mb-5">
+                <div class="mr-1 py-2 text-center card">
                     <div class="mb-3">
-                <a href="{{'/item_detail/'.$item->id}}"><img src="{{asset('img/items/'.$item->image)}}" alt=""></a>
+                        <a href="{{'/item_detail/'.$item->id}}"><img class="img-rounded" src="{{asset('img/items/'.$item->image)}}" alt=""></a>
                     </div>
                     <div class="">
                         <div class="lead">{{$item->name}}</div>
                         <div class="">必要ポイント：{{$item->point}} pt</div>
                     </div>
+                </div>
                 </div>
                 @endforeach
             </div>
