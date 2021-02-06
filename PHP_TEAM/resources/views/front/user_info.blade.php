@@ -20,20 +20,28 @@
             <div class="card w-100 border-0"style="text-align:center">
                 <h6 class="mt-3">保有ポイント数</h6>
                 <h4>{{ Auth::user()->point }} pt</h4>
-                <!--　保有ポイントが未設定だと表示がされません、if文お願いします-->
             </div>
 
             <!-- 達成項目(ループ) -->
             @if ($points->isNotEmpty())
-                @foreach ($points as $point)
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="">達成項目名 {{$point->clear}}</div>
-                        <br>
-                        <div class="">詳細内容{{$point->content}}</div>
-                    </div>       
-                </div>
-                @endforeach
+                <table class="table table-bordered mt-4">
+                    <thead class="table-active">
+                        <tr style="text-align:center">
+                            <td style="width:30%" class="border-dark"><h6 class="mt-2">達成項目名</h6></td>
+                            <td style="width:70%" class="border-dark"><h6 class="mt-2">詳細内容</h6></td>
+                        </tr>
+                    </thead>
+                    <!-- theadを使用しているため、１行目下線が太くなる -->
+                    <tbody class="table-light">
+                        @foreach ($points as $point)
+                            <tr>
+                                <td class="border-dark"><h6 style="text-align:center" class="mt-2">{{$point->clear}}</h6></td>
+                                <td class="border-dark"><h6 class="ml-2 mt-2">{{$point->content}}</h6></td>
+                                <!-- 達成項目名が２行になった場合、詳細内容はmt-2で上下の感覚を揃えているため、中央揃えじゃなくなる -->
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             @endif
         </div>
     </div>
