@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Order as OrderModel;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User as UserModel;
 
 class OrderController extends \App\Http\Controllers\Controller
 {
@@ -27,7 +28,16 @@ class OrderController extends \App\Http\Controllers\Controller
             $order->order_count = $item->qty;
             $order->save();
         }
+
+        $user = UserModel::find(Auth::user()->id);
+        $user->point = $user->point - Cart::total();
+        $user->save();
+
         Cart::destroy();
-        return redirect('/cart');
+        return redirect('/order_commit');
     }
+
+    public function orderCommit(){
+        return view('front.order_commit');
+    } 
 }

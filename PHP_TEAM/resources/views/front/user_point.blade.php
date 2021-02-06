@@ -24,6 +24,7 @@
                         資格取得
                         </label>
                       </div>
+                      {!! formErr('clear') !!}
                     {{-- <div class="form-group">
                         <div class="">
                             <input type="radio" class="form-control" name="title" value="{{  }}">
@@ -50,6 +51,7 @@
                         <div class="">
                             <textarea class="form-control" name="content" rows="10"></textarea>
                         </div>
+                        {!! formErr('content') !!}
                     </div>
                     <input type="submit" class="create-btn" value="申請する">
                 </form>       
