@@ -13,7 +13,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('ユーザー画像') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="file" class="form-control-file @error('name') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="file" class="form-control-file @error('name') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="name" autofocus accept="image/png, image/jpeg">
 
                                 @error('image')
                                     <span class="invalid-feedback" role="alert">
@@ -96,6 +96,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
