@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -26,7 +27,7 @@ class UserController extends Controller
         $user = new User;
         $form = $request->all();
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/img');
+            $path = $request->file('image')->store('img','public');
             $user->image = basename($path);
         } else {
             $user->image = null;
@@ -34,6 +35,7 @@ class UserController extends Controller
 
         unset($form['_token']);
         unset($form['image']);
+        $user->password = Hash::make($form['password']);
         $user->point = 0;
 
         $user->fill($form);

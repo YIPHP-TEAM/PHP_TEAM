@@ -6,14 +6,14 @@
             <!-- データベースやリンク部分は＃にしてます。 -->
             <!-- ページタイトルとボーダー -->
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">商品作成画面</h1>
-            <form method="POST" action="{{ route('#') }}">
+            <form method="POST" action="{{action('Admin\ItemController@create') }}" enctype="multipart/form-data">
                         @csrf
                         <!-- 画像のアップロード -->
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">商品画像</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="file" class="form-control-file @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="name" autofocusautofocus accept="image/png, image/jpeg">
 
                                 @error('image')
                                     <span class="invalid-feedback" role="alert">
@@ -40,10 +40,10 @@
 
                         <!-- 必要ポイント数の入力 -->
                         <div class="form-group row">
-                            <label for="#" class="col-md-4 col-form-label text-md-right">必要ポイント</label>
+                            <label for="point" class="col-md-4 col-form-label text-md-right">必要ポイント</label>
 
                             <div class="col-md-6">
-                                <input id="#" type="#" class="form-control @error('#') is-invalid @enderror" name="#" value="{{ old('#') }}" required autocomplete="#">
+                                <input id="#" type="#" class="form-control @error('#') is-invalid @enderror" name="point" value="{{ old('point') }}" required autocomplete="#">
 
                                 @error('#')
                                     <span class="invalid-feedback" role="alert">
@@ -55,9 +55,9 @@
 
                         <!-- 在庫数の入力 -->
                         <div class="form-group row">
-                            <label for="#" class="col-md-4 col-form-label text-md-right">在庫数</label>
+                            <label for="stock" class="col-md-4 col-form-label text-md-right">在庫数</label>
                             <div class="col-md-6">
-                                <input id="#" type="text" class="form-control @error('#') is-invalid @enderror" name="#" value="{{ old('#') }}" required autocomplete="#" autofocus>
+                                <input id="#" type="text" class="form-control @error('#') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="#" autofocus>
                                 @error('#')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -68,9 +68,9 @@
 
                         <!-- 商品説明 -->
                         <div class="form-group row">
-                            <label for="＃" class="col-md-4 col-form-label text-md-right">商品説明</label>
+                            <label for="content" class="col-md-4 col-form-label text-md-right">商品説明</label>
                             <div class="col-md-6">
-                                <input id="＃" type="text" class="form-control @error('＃') is-invalid @enderror" name="＃" value="{{ old('＃') }}" required autocomplete="＃" autofocus>
+                                <input id="＃" type="text" class="form-control @error('＃') is-invalid @enderror" name="content" value="{{ old('content') }}" required autocomplete="＃" autofocus>
                                 @error('＃')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
