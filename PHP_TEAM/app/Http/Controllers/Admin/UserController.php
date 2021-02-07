@@ -35,10 +35,13 @@ class UserController extends Controller
 
         unset($form['_token']);
         unset($form['image']);
-        $user->password = Hash::make($form['password']);
         $user->point = 0;
+        $request->user()->fill([
+            'password' => Hash::make($request->newPassword)
+        ])->save();
 
         $user->fill($form);
+        
         $user->save();
 
 
