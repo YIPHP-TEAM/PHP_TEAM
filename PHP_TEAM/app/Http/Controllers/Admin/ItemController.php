@@ -18,7 +18,7 @@ class ItemController extends Controller
         $item = new Item;
         $form = $request->all();
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/img');
+            $path = $request->file('image')->store('img/items','public');
             $item->image = basename($path);
         } else {
             $item->image = null;
@@ -31,6 +31,6 @@ class ItemController extends Controller
         $item->save();
 
 
-        return redirect('/admin_index'); 
+        return redirect('/index'); 
     }
 }
