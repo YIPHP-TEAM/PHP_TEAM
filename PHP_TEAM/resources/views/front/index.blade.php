@@ -14,11 +14,15 @@
             <!-- 商品一覧 -->
             <div class="row">
                 @foreach ($items as $item)
+                <!-- 横に4つ表示 -->
                 <div class="col-md-3 mb-3">
+                <!-- カード -->
                 <div class="py-4 text-center card">
+                    <!-- 写真 -->
                     <div class="mb-3">
                         <a href="{{'/item_detail/'.$item->id}}"><img class="img-rounded col-md-10" src="{{asset('img/items/'.$item->image)}}" alt=""></a>
                     </div>
+                    <!-- 名前とポイント -->
                     <div class="">
                         <div class="lead">{{$item->name}}</div>
                         <div class="">必要ポイント：{{$item->point}} pt</div>

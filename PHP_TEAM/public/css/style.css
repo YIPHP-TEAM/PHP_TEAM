@@ -3,5 +3,17 @@
 /* 全体の文字間隔 */
 .font_space_all {
     letter-spacing: 2px;
+    font-family: "游ゴシック体";
 }
 
+/* テーブルボーダーカラー */
+.table > thead > tr > th{
+    border:1px solid rgb(126, 126, 126);
+}
+.table > tbody > tr > td{
+    border:1px solid rgb(126, 126, 126);
+}
+
+.border-126{
+    border:1px solid rgb(126, 126, 126);
+}
