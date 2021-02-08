@@ -58,7 +58,7 @@ class IndexController extends \App\Http\Controllers\Controller
         // complete redirect
         //return $this->complete();
         // return redirect('/question/complete');
-        return redirect('/index');
+        return back()->with('questionMessage', 'お問い合わせ内容送信完了しました。');
     }
 
     //完了した際のTOP画面にリダイレクトするための処理。
