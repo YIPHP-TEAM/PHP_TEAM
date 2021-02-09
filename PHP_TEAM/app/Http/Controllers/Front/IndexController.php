@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\Front\ContactRequest;
 use App\Models\Product as ProductModel;
 use App\Models\Question as QuestionModel;
@@ -22,8 +23,15 @@ class IndexController extends \App\Http\Controllers\Controller
         // return view('front.index');
     }
 
-    public function detail($id)
+    public function search(Request $request)
 {
+    $keyword = $request->keyword;
+    if($keyword !=''){
+        $items = ProductModel::Where('name','like',"%$keyword%")->get();
+    }else{
+        $items = ProductModel::limit(8)->get();
+    }
+    return view('front.index',  ['items' => $items, 'keyword' => $keyword]);
 
 }
 

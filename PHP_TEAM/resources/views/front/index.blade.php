@@ -4,9 +4,9 @@
     <div class="container px-5">
         <div class="mx-auto" >
             <!--↓↓ 検索フォーム ↓↓-->
-            <form class="row form-group mt-3 mb-5 py-2">
+            <form class="row form-group mt-3 mb-5 py-2" action="{{action('Front\IndexController@search')}}" method="get">
                 <div class="col-md-12 d-flex">
-                    <input type="text" name="keyword" class="form-control mr-4" placeholder="ワードを入力してください">
+                    <input type="text" name="keyword" {{$keyword}} class="form-control mr-4" placeholder="ワードを入力してください">
                     <input type="submit" value="検索" class="btn btn-info">
                 </div>
             </form>
