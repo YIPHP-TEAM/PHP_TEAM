@@ -5,6 +5,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Order as OrderModel;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User as UserModel;
+use App\Models\Product as ProductModel;
 
 class OrderController extends \App\Http\Controllers\Controller
 {
@@ -32,6 +33,14 @@ class OrderController extends \App\Http\Controllers\Controller
         $user = UserModel::find(Auth::user()->id);
         $user->point = $user->point - Cart::total();
         $user->save();
+
+        //在庫処理
+        foreach ($cart as $item) {
+            $product = ProductModel::find($item->id);
+            $product->stock = $product->stock - $item->qty;
+            $product->save();
+        }
+
 
         Cart::destroy();
         return redirect('/order_commit');
