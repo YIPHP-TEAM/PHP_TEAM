@@ -6,7 +6,7 @@
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー詳細画面</h1>
             <!-- ユーザー情報 -->
             <div class="row">
-                <!-- <div>{{ Auth::user()->image }}</div>
+                <! <div>{{ Auth::user()->image }}</div>
                 <br>
                 <div>{{ Auth::user()->name }}</div>            
                 <div>初期選択言語{{ Auth::user()->language }}</div>
@@ -24,25 +24,26 @@
                         @endif
                             <div class="">
                                 <div class="">
-                                    <select class="form-control" name="quantity" min="1" max="{{ $item->stock }}" value="{{ old('orders') }}">
-                                    @for ($i = 1; $i <= $item->stock; $i++)
+                                    <select class="form-control" name="quantity" min="1" max="100" value="submit">
+                                    @for ($i = 1; $i <= 100; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                     </select>
                                 </div>
                             </div>
                             <div class="">
-                                <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                <input type="hidden" name="" value="submit">
+                                <a href="user_detail">
                                 <input type="submit" class="create-btn" value="ポイントを変更する" style="width:300px">
+                            </a>
                             </div>
                         
                 </form>
-                </div> -->
+                </div>
             </div>
 
             <!-- 達成項目(ループ) -->
-            @if ()
-                @foreach ()
+                @foreach ($points as $point)
                 <div class="row">
                     <div class="col-md-8">
                         <div class="">達成項目名 {{$point->clear}}</div>
@@ -50,14 +51,17 @@
                         <div class="">詳細内容{{$point->content}}</div>
                     </div>
                     <div class="col-md-2">
+
                         <button type="button" class="btn">対応中</button>
+
                     </div>
                     <div class="col-md-2">
+                        <a href="admin_point">
                         <button type="button" class="btn">ポイント付与へ</button>
+                    </a>
                     </div>
                 </div>                
                 @endforeach
-            @endif
         </div>
     </div>
 @endsection
