@@ -10,9 +10,6 @@
                     <input type="submit" value="検索" class="btn btn-info">
                 </div>
             </form>
-            @if (isset($keyword) && $items->isNotEmpty())
-               検索結果： {{ $items->count() }} 件表示しています。
-            @endif
             <!-- 商品一覧 -->
             <div class="row">
                 @if ($items->isNotEmpty())
