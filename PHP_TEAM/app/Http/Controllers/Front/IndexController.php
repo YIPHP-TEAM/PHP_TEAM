@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\Front\ContactRequest;
 use App\Models\Product as ProductModel;
 use App\Models\Question as QuestionModel;
+use App\Http\Requests\Front\SearchRequest;
 
 class IndexController extends \App\Http\Controllers\Controller
 {
@@ -16,22 +17,25 @@ class IndexController extends \App\Http\Controllers\Controller
     public function index()
     {
         
-        // todo: 商品詳細テーブル(items)のデータを取得し、8件ユーザTOP画面に表示させるための処理。
-         $this->data['items'] = ProductModel::limit(8)->get();
+        // todo: 商品詳細テーブル(items)のデータを取得。
+         $this->data['items'] = ProductModel::all();
         // dd($this->data['items']);
          return view('front.index', $this->data);
         // return view('front.index');
     }
 
-    public function search(Request $request)
+
+    public function search(SearchRequest $request)
 {
     $keyword = $request->keyword;
-    if($keyword !=''){
-        $items = ProductModel::Where('name','like',"%$keyword%")->get();
-    }else{
-        $items = ProductModel::limit(8)->get();
-    }
-    return view('front.index',  ['items' => $items, 'keyword' => $keyword]);
+    // if($keyword !=''){
+    $items = ProductModel::Where('name','like',"%$keyword%")->get();
+    // }else{
+        // $items = ProductModel::all();
+    // }
+    $this->data['keyword'] = $keyword;
+    $this->data['items'] = $items;
+    return view('front.index', $this->data);
 
 }
 
