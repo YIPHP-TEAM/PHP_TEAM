@@ -6,7 +6,7 @@
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー詳細画面</h1>
             <!-- ユーザー情報 -->
             <div class="row">
-                <! <div>{{ Auth::user()->image }}</div>
+                <div>{{ Auth::user()->image }}</div>
                 <br>
                 <div>{{ Auth::user()->name }}</div>            
                 <div>初期選択言語{{ Auth::user()->language }}</div>
