@@ -14,18 +14,20 @@
                             </label>
                             
                             <label class="btn btn-outline-secondary btn-lg px-4">
-                            <input type="radio" name="clear" id="option2" value="資格取得">資格取得
+                            <input type="radio" name="clear" id="option1" value="資格取得">資格取得
                             </label>
 
                             <label class="btn btn-outline-secondary btn-lg">
-                            <input type="radio" name="clear" id="option2" value="その他の貢献活動">その他の貢献活動
+                            <input type="radio" name="clear" id="option1" value="その他の貢献活動">その他の貢献活動
                             </label>
                         </div>
                     </div>
+                    {!! formErr('clear') !!}
                 </div>
                 <div class="form-group">
                     <h5 class="py-2">2.達成内容を入力してください</h5>
                     <textarea class="form-control" name="content" rows="10"></textarea>
+                    {!! formErr('content') !!}
                 </div>
                 <input type="submit" class="create-btn btn-lg float-right" value="申請する">
           </form>

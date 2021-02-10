@@ -32,7 +32,7 @@ class UserController extends \App\Http\Controllers\Controller
         $point->clear = $request->clear;
         $point->created_at = now();
         $point->save();
-        dd($point);
+        // dd($point);
         return redirect('/index');
     }
 }
