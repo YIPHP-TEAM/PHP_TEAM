@@ -31,7 +31,7 @@ class PointRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'clear' => 'required|in:カリキュラムの合格,その他の貢献活動,資格取得',
+            'clear' => 'required',
             'content' => 'required|max:300',
         ];
 
