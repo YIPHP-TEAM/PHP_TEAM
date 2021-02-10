@@ -31,7 +31,7 @@ class PointRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'clear' => 'required',
+            'clear' => 'required|',
             'content' => 'required|max:300',
         ];
 
