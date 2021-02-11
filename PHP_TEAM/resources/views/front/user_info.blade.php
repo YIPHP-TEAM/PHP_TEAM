@@ -25,20 +25,19 @@
 
                 <!-- 達成項目(ループ) -->
                 @if ($points->isNotEmpty())
-                    <table class="table table-bordered mt-5">
+                    <table class="table table-bordered mt-5 text-center" style="table-layout:fixed;width:100%;">
                         <thead class="table-active">
-                            <tr class="text-center">
-                                <th style="width:30%"><h6 class="mt-2">達成項目名</h6></td>
-                                <th style="width:70%"><h6 class="mt-2">詳細内容</h6></td>
+                            <tr class="">
+                                <th style="width:30%"><div class="my-2">達成項目名</div></th>
+                                <th style="width:70%"><div class="my-2">詳細内容</div></th>
                             </tr>
                         </thead>
                         <!-- theadを使用しているため、１行目下線が太くなる -->
                         <tbody class="table-light">
                             @foreach ($points as $point)
                                 <tr>
-                                    <td><h6 style="text-align:center" class="mt-2">{{$point->clear}}</h6></td>
-                                    <td><h6 class="ml-2 mt-2">{{$point->content}}</h6></td>
-                                    <!-- 達成項目名が２行になった場合、詳細内容はmt-2で上下の感覚を揃えているため、中央揃えじゃなくなる -->
+                                    <td class="align-middle">{{$point->clear}}</td>
+                                    <td class="align-middle" style="word-wrap:break-word;">{{$point->content}}</td>
                                 </tr>
                             @endforeach
                         </tbody>
