@@ -11,7 +11,7 @@
                         @foreach ($cart as $item)
                             <div class="col-md-4">
                                 <div class="card border-0">
-                                    <div class="d-block mx-auto mt-5"><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
+                                    <div class="d-block mx-auto mt-5"><img src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt=""></div>
                                     <br>
                                     <div class="container px-5">
                                         <div class="text-center border-bottom border-secondary pb-3 mb-3">商品名{{$item->name}}</div>
@@ -64,7 +64,7 @@
                             <div class="border-bottom border-secondary pb-3"><h2>合計ポイント： {{Cart::total()}}pt</h2></div>
                             <div class="mt-4">
                                 @if (Auth::user()->point >= Cart::total())
-                                <a class="btn btn-secondary border-dark"　style="width:300px"　href="/cart_order">購入画面へ進む</a>
+                                <a class="btn btn-secondary border-dark" style="width:300px" href="/cart_order">購入画面へ進む</a>
                                 @else
                                 ポイントが足りませんので購入できません。<br>
                                 編集で商品数を調整してください。
