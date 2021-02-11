@@ -3,6 +3,7 @@
 /* 全体の文字間隔 */
 .font_space_all {
     letter-spacing: 2px;
+    line-height: 2em;
     font-family: "游ゴシック体";
 }
 

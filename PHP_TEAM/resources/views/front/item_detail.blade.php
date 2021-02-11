@@ -1,16 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-@if (session('message'))
-<div class="">
-    {{ session('message') }}
-</div>
-@endif
     <div class="container p-5">
         <div class="mx-auto">  
             <!-- ページタイトルとボーダー -->
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">商品詳細画面</h1>
-            <div class="row px-5">
+            <div class="row px-5 mx-auto">
                 <!-- 商品詳細部分_右側-->
                 <div class="col-md-8">
                     <div class="">
@@ -41,8 +36,8 @@
                                 @endforeach
                             </ul>
                         @endif
-                            <div class="pb-0">
-                                <label class="">数量</label>
+                            <div class="pb-0 d-flex align-items-end">
+                                <label class="mr-2">数量</label>
                                 <div class="">
                                     <select class="form-control" name="quantity" min="1" max="{{ $item->stock }}" value="{{ old('orders') }}">
                                     @for ($i = 1; $i <= $item->stock; $i++)
@@ -51,11 +46,10 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="mx-5 mb-0">
+                            <div class="mx-5 mb-0 d-flex align-items-end">
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
-                                <input type="submit" class="create-btn p-2 mb-0" value="商品をカートに入れる" style="width:300px">
+                                <input type="submit" class="btn btn-secondary p-2 mb-0" value="商品をカートに入れる" style="width:300px">
                             </div>
-                        
                     </form>
                 </div>
 
@@ -63,6 +57,12 @@
                 <div class="col-md-4 p-5"> 
                     <img src="{{asset('img/items/'.$item->image)}}">
                 </div>
+
+                @if (session('message'))
+                <div class="col mt-3">
+                    {{ session('message') }}
+                </div>
+                @endif
             </div>
         </div>
     </div>
