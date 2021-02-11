@@ -15,6 +15,14 @@ class ItemController extends Controller
 
     public function create(Request $request)
     {
+        $validate_rule = [
+            'name' => 'required|max:50',
+            'point' => 'integer|required|max:100',
+            'stock' => 'integer|required',
+            'content' => 'required|max:255',
+        ];
+        $this->validate($request, $validate_rule);
+
         $item = new Item;
         $form = $request->all();
         if (isset($form['image'])) {

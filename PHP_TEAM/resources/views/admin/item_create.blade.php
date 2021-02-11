@@ -45,9 +45,9 @@
                             <label for="point" class="col-md-4 col-form-label text-md-right">必要ポイント</label>
 
                             <div class="col-md-6">
-                                <input id="#" type="#" class="form-control @error('#') is-invalid @enderror" name="point" value="{{ old('point') }}" required autocomplete="#">
+                                <input id="#" type="#" class="form-control @error('point') is-invalid @enderror" name="point" value="{{ old('point') }}" required autocomplete="#">
 
-                                @error('#')
+                                @error('point')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -59,8 +59,8 @@
                         <div class="form-group row pt-1">
                             <label for="stock" class="col-md-4 col-form-label text-md-right">在庫数</label>
                             <div class="col-md-6">
-                                <input id="#" type="text" class="form-control @error('#') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="#" autofocus>
-                                @error('#')
+                                <input id="#" type="text" class="form-control @error('stock') is-invalid @enderror" name="stock" value="{{ old('stock') }}" required autocomplete="#" autofocus>
+                                @error('stock')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -72,8 +72,8 @@
                         <div class="form-group row pt-1">
                             <label for="content" class="col-md-4 col-form-label text-md-right">商品説明</label>
                             <div class="col-md-6">
-                                <input id="＃" type="text" class="form-control @error('＃') is-invalid @enderror" name="content" value="{{ old('content') }}" required autocomplete="＃" autofocus>
-                                @error('＃')
+                                <input id="＃" type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" required autocomplete="＃" autofocus>
+                                @error('content')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
