@@ -1,44 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        <div class="mx-auto" style="max-width:1200px">
-            <h1>購入画面</h1>
+    <div class="container p-5">
+        <div class="mx-auto">
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">購入画面</h1>
             <!-- 購入商品一覧 -->
             <div class="row">
-                @if (!empty($cart))
-                @foreach ($cart as $item)
-                    <div class="col-md-4">
-                            <div class=""><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
-                            <br>
-                            <div class="">商品名{{$item->name}}</div>
-                            <br>
+                <!-- テーブルで購入品一覧を表示 -->
+                    <div class="col-md-10">
+                        @if (!empty($cart))
+                        @foreach ($cart as $item)
                             <div class="">
-                                <div class="">注文数{{$item->qty}}</div>
-                                <div class="">必要ポイント{{$item->price}}</div>
+                                    <div class=""><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
+                                    <div class="">商品名:{{$item->name}}</div>
+                                    <div class="">注文数:{{$item->qty}}</div>
+                                    <div class="">必要ポイント:{{$item->price}}</div>
                             </div>
+                        @endforeach
+                        @endif
                     </div>
-                @endforeach
-            @endif
 
-            <!-- 購入確認 -->
-                <div class="row">
-                    <div class="">
-                        <div class="">注文内容</div>
-                        <br>
+                <!-- 購入確認 -->
+                    <div class="col-md-10 text-right pt-5">
                         <div class="">
-                            <div class="">注文数合計{{Cart::count()}}</div>
-                            <br>
-                            <div class="">注文合計額{{Cart::total()}}</div>
+                            <div class="pb-1">
+                                <div class=""><h2>注文数合計:{{Cart::count()}}</h2></div>
+                                <div class=""><h2>注文合計額:{{Cart::total()}}ポイント</h2></div>
+                            </div>
+                        </div>
+                        <div class="col ">
+                            <form action="/order" method="post">
+                                @csrf
+                                <input type="submit" class="btn btn-secondary border-dark  px-4" value="購入する">
+                            </form>
                         </div>
                     </div>
-                    <div class="">
-                      <form action="/order" method="post">
-                        @csrf
-                        <input type="submit" class="create-btn" value="購入する">
-                      </form>
-                    </div>
-                </div>
         </div>
     </div>
 @endsection
