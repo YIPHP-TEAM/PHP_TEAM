@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class UserController extends Controller
@@ -23,10 +24,20 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
+        $validate_rule = [
+            'image' => 'required',
+            'name' => 'required|max:50',
+            'email' => 'required',
+            'password' => 'required|max:8',
+            'role' => 'required',
+            'language' => 'required',
+        ];
+        $this->validate($request, $validate_rule);
+
         $user = new User;
         $form = $request->all();
         if (isset($form['image'])) {
-            $path = $request->file('image')->store('public/img');
+            $path = $request->file('image')->store('img','public');
             $user->image = basename($path);
         } else {
             $user->image = null;
@@ -37,6 +48,12 @@ class UserController extends Controller
         $user->point = 0;
 
         $user->fill($form);
+
+        $user->fill([
+            'password' => Hash::make($request->password)
+        ]);
+
+        
         $user->save();
 
 

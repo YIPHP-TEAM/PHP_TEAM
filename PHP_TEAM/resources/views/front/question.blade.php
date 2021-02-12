@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('questionMessage'))
+<div class="">
+    {{ session('questionMessage') }}
+</div>
+@endif
     <div class="container p-5">
       <div class="mx-auto">
         <h1 class="text-center border-bottom border-secondary pb-3 mb-5">お問い合わせ</h1>

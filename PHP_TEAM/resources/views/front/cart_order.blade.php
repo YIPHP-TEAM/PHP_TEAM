@@ -9,7 +9,7 @@
                 @if (!empty($cart))
                 @foreach ($cart as $item)
                     <div class="col-md-4">
-                            <div class=""><img src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></div>
+                            <div class=""><img src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt=""></div>
                             <br>
                             <div class="">商品名{{$item->name}}</div>
                             <br>

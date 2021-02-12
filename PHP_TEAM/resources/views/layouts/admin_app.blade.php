@@ -23,17 +23,14 @@
 <body>
     <div id="app" class="font_space_all">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container py-2">
                 <!-- ロゴ（リンクなし）-->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('/img/yi_point_logo.png') }}" alt="">
+                <a class="navbar-brand" href="{{ url('/admin_index') }}">
+                <img style="width: 70px;" src="{{ asset('/img/yi_point_logo.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- ポイントの表示 -->
-                <div class=""></div>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
@@ -56,10 +53,10 @@
                                 <a class="nav-link text-black" href="/admin_question">お問い合わせ一覧</a>
                             </li>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" href="/user_point">ユーザー作成</a>
+                                <a class="nav-link text-black" href="/user_create">ユーザー作成</a>
                             </li>
                             <li class="nav-item ml-2">
-                                <a class="nav-link text-black" id="post-link" href="/cart">商品作成</a>
+                                <a class="nav-link text-black" id="post-link" href="/item_create">商品作成</a>
                             </li>
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -86,9 +83,16 @@
             @yield('content')
         </main>
         <!-- フッター -->
+        
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="nav-link text-black" href="/question">お問い合わせ</a>
+        <div class="container py-2">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="/question">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
             </div>
         </nav>
     </div>

@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/order', 'Front\OrderController@order');
     Route::post('/cart/delete','Front\CartController@delete');
     Route::get('/order_commit','Front\OrderController@orderCommit');
+    Route::get('/search','Front\IndexController@search');
     Route::get('/home', 'Front\HomeController@index')->name('home');
     Route::get('/admin_index', 'Admin\UserController@index');
     Route::get('/admin_question', 'Admin\QuestionController@index');
@@ -42,11 +43,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/item_create', 'Admin\ItemController@add');
     Route::post('/admin_question/delete/{id}', 'Admin\QuestionController@delete');
     Route::get('/user_create', 'Admin\UserController@add');
-
-
-    Route::get('/user_detail', 'Admin\detail_Controller@details');
-    Route::get('/user_detail', 'Admin\detail_Controller@points');
-    Route::post('/user_detail', 'Admin\detail_Controller@update');
-
-    Route::get('/admin_point', 'Admin\point_Controller@point');
+    Route::post('/item_create', 'Admin\ItemController@create');
 });

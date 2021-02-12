@@ -5,7 +5,8 @@ namespace App\Http\Requests\Front;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
-class PointRequest extends FormRequest 
+
+class SearchRequest extends FormRequest
 {
     public function __construct()
     {
@@ -31,8 +32,7 @@ class PointRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'clear' => 'required|',
-            'content' => 'required|max:300',
+            'keyword' => 'required|string',
         ];
 
         return $rules;
@@ -41,8 +41,7 @@ class PointRequest extends FormRequest
     public function attributes()
     {
         return [
-            'clear' => '達成項目',
-            'content' => 'ポイント申請内容',
+            'keyword' => 'keyword',
         ];
     }
 }

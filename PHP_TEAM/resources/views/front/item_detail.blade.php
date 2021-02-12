@@ -61,7 +61,7 @@
 
                 <!-- 商品画像_左側 -->
                 <div class="col-md-4 p-5"> 
-                    <img src="{{asset('img/items/'.$item->image)}}">
+                    <img src="{{asset('storage/img/items/'.$item->image)}}">
                 </div>
             </div>
         </div>
