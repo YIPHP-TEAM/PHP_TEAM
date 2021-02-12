@@ -17,7 +17,7 @@
                     <div class="col-md-3 mb-3">
                         <div class="py-4 text-center card">
                             <div class="mb-3">
-                                <a href="{{'/item_detail/'.$item->id}}"><img class="img-rounded col-md-10" src="{{asset('img/items/'.$item->image)}}" alt=""></a>
+                                <a href="{{'/item_detail/'.$item->id}}"><img class="img-rounded col-md-10" src="{{asset('storage/img/items/'.$item->image)}}" alt=""></a>
                             </div>
                             <div class="">
                                 <div class="lead">{{$item->name}}</div>

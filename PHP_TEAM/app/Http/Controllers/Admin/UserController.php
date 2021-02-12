@@ -24,6 +24,16 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
+        $validate_rule = [
+            'image' => 'required',
+            'name' => 'required|max:50',
+            'email' => 'required',
+            'password' => 'required|max:8',
+            'role' => 'required',
+            'language' => 'required',
+        ];
+        $this->validate($request, $validate_rule);
+
         $user = new User;
         $form = $request->all();
         if (isset($form['image'])) {
@@ -35,10 +45,15 @@ class UserController extends Controller
 
         unset($form['_token']);
         unset($form['image']);
-        $user->password = Hash::make($form['password']);
         $user->point = 0;
 
         $user->fill($form);
+
+        $user->fill([
+            'password' => Hash::make($request->password)
+        ]);
+
+        
         $user->save();
 
 
