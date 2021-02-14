@@ -22,7 +22,7 @@
           <form action="/question/save" method="POST">
           @csrf
           <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-          <textarea class="form-control" name="content" rows="4"></textarea>
+          <textarea class="form-control" name="comment" rows="4"></textarea>
             <input class="float-right mt-3 p-2 px-3 btn btn-secondary " type="submit" value="お問い合わせ">        
           </form>
         </div>
