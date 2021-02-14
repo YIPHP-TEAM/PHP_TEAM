@@ -33,6 +33,7 @@ class SearchRequest extends FormRequest
     {
         $rules = [
             'keyword' => 'required|string',
+            'point' => 'required|string', 
         ];
 
         return $rules;
@@ -42,6 +43,7 @@ class SearchRequest extends FormRequest
     {
         return [
             'keyword' => 'keyword',
+            'point' => 'point',
         ];
     }
 }

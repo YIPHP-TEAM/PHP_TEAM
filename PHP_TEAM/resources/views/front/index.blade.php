@@ -7,6 +7,7 @@
             <form class="row form-group mt-3 mb-5 py-2" action="/search" method="get">
                 <div class="col-md-12 d-flex">
                     <input type="text" name="keyword" value="{{isset($keyword) ? $keyword : null}}" class="form-control mr-4" placeholder="ワードを入力してください">
+                    <input type="text" name="point" value="{{isset($point) ? $point : null}}" class="form-control mr-4" placeholder="ワードを入力してください">
                     <input type="submit" value="検索" class="btn btn-secondary">
                 </div>
             </form>

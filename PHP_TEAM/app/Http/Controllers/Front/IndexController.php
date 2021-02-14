@@ -28,12 +28,16 @@ class IndexController extends \App\Http\Controllers\Controller
     public function search(SearchRequest $request)
 {
     $keyword = $request->keyword;
+    $point = $request->point; //追加
     // if($keyword !=''){
-    $items = ProductModel::Where('name','like',"%$keyword%")->get();
+    $items = ProductModel::Where('name','like',"%$keyword%")
+    ->Where('point', 'LIKE', "%$point%")//追加 orwhereでor検索の実装も可能
+    ->get();
     // }else{
         // $items = ProductModel::all();
     // }
     $this->data['keyword'] = $keyword;
+    $this->data['point'] = $point;
     $this->data['items'] = $items;
     return view('front.index', $this->data);
 
