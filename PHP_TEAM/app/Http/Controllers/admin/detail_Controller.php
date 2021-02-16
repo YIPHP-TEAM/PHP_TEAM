@@ -6,35 +6,38 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Point;
-
-
-
+use Illuminate\Support\Facades\Auth;
 
 class detail_Controller extends Controller
 {
-    public function details()
-        {
-        $users = User::all();
-        return view('admin.user_detail',['users' => $users]);
-    }
-
-    public function points() 
+    public function detail($user_id)
     {
-        $points = Point::all();
-        return view('admin.user_detail',['points' => $points]);
-    }
-
-
-    public function update(Request $request)
+        $this->data['user']=User::find($user_id);
+        $this->data['points']=Point::where('user_id','=',$user_id)->get();
+        return view('admin.user_detail',$this->data);
+        }
+    public function update(Request $request, $user_id)
     {
+      //User::where('id','=',$user_id)->update(['point',$request->quantity]);
+        //$this->data['user']=User::find($user_id);
+        $user = User::find($user_id);
+        $user->point = $request->quantity;
+        $user->save();
+      //$request->save($this->data);
+      //return var_dump(User::where('id','=',$user_id));
+      //return var_dump($user_id);
+        //$user->id = Auth::user()->id;
+        //$user->point = $request->quantity;
+        //$user->save();
+        //return redirect('/admin.user_detail',$this->data);
+        //}
+      return redirect()->route('user_detail.detail',$user_id);
+      }
 
-      $user = User::all();
-      $user->point = $request->point;
-      $user->save();
-      return redirect('/user_detail');
 
 
-    
+
 }
-}
+
+
 
