@@ -59,8 +59,8 @@
                             <div class="col-md-6">
                                 <select id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
                                   <option value="" selected disabled>選択して下さい</option>
-                                  <option value="0">0</option>
-                                  <option value="1">1</option>
+                                  <option value="0">管理者</option>
+                                  <option value="1">一般ユーザー</option>
                                 </select>
                                 @error('role')
                                     <span class="invalid-feedback" role="alert">

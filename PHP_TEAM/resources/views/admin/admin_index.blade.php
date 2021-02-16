@@ -14,20 +14,20 @@
             <!-- ユーザー一覧 -->
             <div class="row">
                 <div class="mx-auto col-md-8">
-                    <table class="table table-bordered text-center">
+                    <table class="table table-bordered text-center" style="table-layout:fixed;width:100%;">
                     <thead class="table-active">
                         <tr>
-                        <th><div class="my-2">ユーザー画像</div></th>
-                        <th><div class="my-2">ユーザーネーム</div></th>
-                        <th><div class="my-2">選択言語</div></th>
+                        <th style="width:20%;"><div class="my-2">ユーザー画像</div></th>
+                        <th style="width:40%;"><div class="my-2">ユーザーネーム</div></th>
+                        <th style="width:40%;"><div class="my-2">選択言語</div></th>
                         </tr>
                     </thead>
                     @foreach ($users as $user)
                     <tbody class="table-light">
                         <tr>
-                        <td><a href="{{'/user_detail/'.$user->id}}"><img src="{{asset('storage/img/'.$user->image)}}"></a></th>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->language}}</td>
+                        <td class="align-middle" style="word-wrap:break-word;"><a href="{{'/user_detail/'.$user->id}}"><img class="w-50" src="{{asset('storage/img/'.$user->image)}}"></a></th>
+                        <td class="align-middle" style="word-wrap:break-word;">{{$user->name}}</td>
+                        <td class="align-middle" style="word-wrap:break-word;">{{$user->language}}</td>
                         </tr>
                     </tbody>
                     @endforeach
