@@ -6,7 +6,7 @@
             <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー詳細画面</h1>
             <!-- ユーザー情報 -->
             <div class="row">
-                <div>{{ $user->image }}</div>
+                <div><td class="align-middle" style="word-wrap:break-word;"><img class="w-50" src="{{asset('storage/img/'.$user->image)}}"></th></div>
                 <br>
                 <div>{{ $user->name }}</div>            
                 <div>初期選択言語{{ $user->language }}</div>
@@ -21,8 +21,8 @@
 
                             <div class="">
                                 <div class="">
-                                    <select class="form-control" name="quantity" min="1" max="100" value="submit">
-                                    @for ($i = 1; $i <= 100; $i++)
+                                    <select class="form-control" name="quantity" min="1" max="300" value="submit">
+                                    @for ($i = $user->point; $i <= 300; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                     </select>
