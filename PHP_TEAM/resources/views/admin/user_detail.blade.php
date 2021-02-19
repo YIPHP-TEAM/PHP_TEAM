@@ -40,48 +40,29 @@
             </div>
 
             <!-- 達成項目(ループ) -->
-
                 <div class="row">
+                @foreach ($points as $point)
                     <div class="col-md-8">
                         <div class="">達成項目名
-                            @foreach ($points as $point)
                             {{$point->clear}}
-                            <br>
-                            @endforeach
                         </div>
                         <div class="">詳細内容
-                            @foreach ($points as $point)
                             {{$point->content}}
-                            <br>
-                            @endforeach
                         </div>
                     </div>
                     <div class="col-md-2">
-
-                        <HTML>
-                        <BODY>
-
-                        <FORM name="f1">
-                        <INPUT type="button" value="対応中" onClick="color(0)">
-                        </FORM>
-
-                        <SCRIPT language="JavaScript">
-                        <!--
-                            function color(b){
-                            document.f1.elements[b].value='対応中';
-                            document.f1.elements[b].style.background='#FF0000';
-                            document.f1.elements[b].style.color='#FFFFFF';
-                            }
-                        // -->
-                        </SCRIPT>
-                        </BODY>
-                        </HTML>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-secondary">
+                                <input type="checkbox" autocomplete="off">対応中
+                            </label>
+                        </div>
                     </div>
                     <div class="col-md-2">
                         <a href="{{'/admin_point/'.$user->id}}">
                         <button type="button" class="btn">ポイント付与へ</button>
                     </a>
                     </div>
+                @endforeach
                 </div>                
 
         </div>

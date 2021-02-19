@@ -8,6 +8,7 @@
             <!-- お問い合わせ(ループ) -->
                 <!-- ユーザー名と問合せ内容 -->
                 <div class="row">
+                @if ($questions->isNotEmpty())
                     <div class="mx-auto col-md-12">
                         <table class="table table-bordered text-center" style="table-layout:fixed;width:100%;">
                         <thead class="table-active">
@@ -40,6 +41,9 @@
                         @endforeach
                         </table>
                     </div>
+                    @else
+                    <p class="mx-auto">お問い合わせはありません。</p>
+                    @endif
                 </div>                
 
         </div>

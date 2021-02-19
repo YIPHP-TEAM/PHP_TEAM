@@ -86,8 +86,10 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4">
+        <main class="py-4" style="min-height: 700px;">
+            <div >
             @yield('content')
+            </div>
         </main>
         <!-- フッター -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
