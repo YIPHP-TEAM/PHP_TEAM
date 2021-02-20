@@ -51,9 +51,9 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <div class="btn-group-toggle" >
+                        <div class="btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-outline-secondary">
-                                <input type="checkbox" autocomplete="off"><i class="fas fa-trash"></i>
+                                <input type="checkbox" autocomplete="off">対応中
                             </label>
                         </div>
                     </div>
