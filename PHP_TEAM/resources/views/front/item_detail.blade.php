@@ -27,9 +27,10 @@
                     </div>
 
                     <!-- 個数選択 -->
-                    <form class="form-inline py-3" action="/cart/add" method="post">
+                    <div class="form-inline py-3">
+                    <form action="/cart/add" method="post">
                         @csrf
-                        @if (count($errors) > 0)
+                        @if ($item->stock > 0)
                             <ul>
                                 @foreach($errors->all() as $e)
                                     <li>{{ $e }}</li>
@@ -44,15 +45,16 @@
                                     @endfor
                                     </select>
                                 </div>
-                            </div>
-                            <div class="mx-5 mb-0 d-flex align-items-end">
+                                <div class="ml-3 align-items-end">
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
                                 <input type="submit" class="btn btn-secondary p-2 mb-0" value="商品をカートに入れる" style="width:300px">
+                                </div>
                             </div>
                             @else
                             <p>在庫がありません。</p>
                             @endif
                     </form>
+                    </div>
                 </div>
 
                 <!-- 商品画像_左側 -->

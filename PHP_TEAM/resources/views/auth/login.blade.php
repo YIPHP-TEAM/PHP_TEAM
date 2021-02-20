@@ -26,7 +26,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="text-center my-5 mb-5">
-                <img style="width:300px;" src="{{ asset('/img/yi_point_logo.png') }}" alt="">
+                <img style="width:300px;" src="{{ asset('/img/yi_point_logo_4.png') }}" alt="">
             </div>
             <div class="">
                 <div class=" py-2 mb-2">

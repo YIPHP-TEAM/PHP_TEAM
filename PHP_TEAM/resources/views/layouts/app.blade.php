@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://kit.fontawesome.com/058b18d539.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -19,6 +20,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app" class="font_space_all">
@@ -26,7 +28,7 @@
             <div class="container py-2">
                 <!-- ロゴ -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                <img style="width: 70px;" src="{{ asset('/img/yi_point_logo.png') }}" alt="">
+                <img style="width: 70px;" src="{{ asset('/img/yi_point_logo_4.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -53,7 +55,15 @@
                         @else
                             <!-- ポイントの表示 -->
                             <li class="nav-item ml-2">
-                                <div class="nav-link text-black">現在ポイント数:{{Auth::user()->point}} Pt</div>
+                                <div class="nav-link text-black">
+                                現在ポイント数:
+                                @if (Auth::user()->point > 0)
+                                {{Auth::user()->point}} 
+                                @else
+                                0
+                                @endif
+                                Pt
+                                </div>
                             </li>
                             <li class="nav-item ml-2">
                                 <a class="nav-link text-black" href="/user_point">ポイント申請</a>
