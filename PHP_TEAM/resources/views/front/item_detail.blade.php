@@ -35,7 +35,6 @@
                                     <li>{{ $e }}</li>
                                 @endforeach
                             </ul>
-                        @endif
                             <div class="pb-0 d-flex align-items-end">
                                 <label class="mr-2">数量</label>
                                 <div class="">
@@ -50,6 +49,9 @@
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">
                                 <input type="submit" class="btn btn-secondary p-2 mb-0" value="商品をカートに入れる" style="width:300px">
                             </div>
+                            @else
+                            <p>在庫がありません。</p>
+                            @endif
                     </form>
                 </div>
 
