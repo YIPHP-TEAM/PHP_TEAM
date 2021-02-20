@@ -22,7 +22,7 @@
                             <div class="">
                                 <div class="">
                                     <select class="form-control" name="quantity" min="1" max="300" value="submit">
-                                    @for ($i = $user->point; $i <= 300; $i++)
+                                    @for ($i = $user->point; $i <= 1000; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                     </select>
