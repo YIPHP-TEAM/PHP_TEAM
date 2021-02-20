@@ -28,7 +28,7 @@
                     @endforeach
                 @else
                     @if (isset($keyword))
-                        該当する商品がございません。
+                        <p class="col">該当する商品がございません。</p>
                     @endif
                 @endif
             </div>

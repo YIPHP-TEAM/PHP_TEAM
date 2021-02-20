@@ -27,7 +27,7 @@
                                                 <input type="hidden" name="rowId" value="{{$item->rowId}}">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <select name="cnt"　style="height:43px">
+                                                        <select name="cnt" style="height:43px">
                                                             @for($i = 1; $i <= $item->options->stock; $i++)
                                                             <option value="{{ $i }}">{{ $i }}</option>
                                                             @endfor
@@ -73,7 +73,7 @@
                         </div>
                         </div>
                     @else
-                    カート内には何も入っていません。
+                    <p class="mx-auto">カート内には何も入っていません。</p>
                     @endif
             </div>
         </div>
