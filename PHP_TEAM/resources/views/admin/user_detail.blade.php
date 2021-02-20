@@ -22,7 +22,7 @@
                             <div class="">
                                 <div class="">
                                     <select class="form-control" name="quantity" min="1" max="300" value="submit">
-                                    @for ($i = $user->point; $i <= 300; $i++)
+                                    @for ($i = $user->point; $i <= 1000; $i++)
                                         <option value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                     </select>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{'/admin_point/'.$user->id}}">
+                        <a href="{{'/admin_point/'.$point->id}}">
                         <button type="button" class="btn">ポイント付与へ</button>
                     </a>
                     </div>
