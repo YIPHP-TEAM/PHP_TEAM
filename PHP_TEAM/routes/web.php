@@ -44,12 +44,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin_question/delete/{id}', 'Admin\QuestionController@delete');
     Route::get('/user_create', 'Admin\UserController@add');
     Route::post('/item_create', 'Admin\ItemController@create');
-
     Route::get('/user_detail/{user_id}', 'Admin\detail_Controller@detail')->name('user_detail.detail');
-
     Route::post('/user_detail/save/{user_id}', 'Admin\detail_Controller@update');
+    Route::post('/admin_point/save/{point_id}', 'Admin\point_Controller@update');
 
-    Route::get('/admin_point/{user_id}', 'Admin\point_Controller@point');
+    Route::get('/admin_point/{point_id}', 'Admin\point_Controller@point');
+
+    Route::post('/admin_point/delete/{point_id}', 'Admin\point_Controller@delete');
 
 
 
