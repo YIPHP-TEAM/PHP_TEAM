@@ -58,8 +58,8 @@
                 </div>
 
                 <!-- 商品画像_左側 -->
-                <div class="col-md-4 p-5"> 
-                    <img src="{{asset('storage/img/items/'.$item->image)}}">
+                <div class="col-md-4"> 
+                    <img class="w-100" src="{{asset('storage/img/items/'.$item->image)}}" style="object-fit: cover;">
                 </div>
 
                 @if (session('message'))

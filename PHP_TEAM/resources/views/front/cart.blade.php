@@ -11,7 +11,7 @@
                         @foreach ($cart as $item)
                             <div class="col-md-4">
                                 <div class="card border-0">
-                                    <div class="d-block mx-auto mt-5"><img src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt=""></div>
+                                    <div class="d-block mx-auto text-center mt-5"><img class="img_size_2 col-md-12 img-rounded" src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt="" style="object-fit: cover;"></div>
                                     <br>
                                     <div class="container px-5">
                                         <div class="text-center border-bottom border-secondary pb-3 mb-3">商品名{{$item->name}}</div>

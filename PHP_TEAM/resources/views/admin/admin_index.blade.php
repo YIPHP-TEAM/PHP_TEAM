@@ -25,7 +25,7 @@
                     @foreach ($users as $user)
                     <tbody class="table-light">
                         <tr>
-                        <td class="align-middle" style="word-wrap:break-word;"><a href="{{'/user_detail/'.$user->id}}"><img class="w-50" src="{{asset('storage/img/'.$user->image)}}"></a></th>
+                        <td class="align-middle" style="word-wrap:break-word;"><a class="col-md-6 text-center" href="{{'/user_detail/'.$user->id}}"><img class=" img_size_3" src="{{asset('storage/img/'.$user->image)}}" style="object-fit: cover;"></a></th>
                         <td class="align-middle" style="word-wrap:break-word;">{{$user->name}}</td>
                         <td class="align-middle" style="word-wrap:break-word;">{{$user->language}}</td>
                         </tr>
