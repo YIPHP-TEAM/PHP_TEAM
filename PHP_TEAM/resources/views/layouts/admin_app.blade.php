@@ -27,7 +27,7 @@
             <div class="container py-2">
                 <!-- ロゴ（リンクなし）-->
                 <a class="navbar-brand" href="{{ url('/admin_index') }}">
-                <img style="width: 70px;" src="{{ asset('/img/yi_point_logo.png') }}" alt="">
+                <img style="width: 70px;" src="{{ asset('/img/yi_point_logo_4.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4">
+        <main class="py-4" style="min-height: 700px;">
             @yield('content')
         </main>
         <!-- フッター -->

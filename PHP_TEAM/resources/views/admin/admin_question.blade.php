@@ -24,14 +24,18 @@
                             <td class="align-middle" style="word-wrap:break-word;"><div>{{$question->user_id}}</div></td>
                             <td class="align-middle" style="word-wrap:break-word;"><div>{{$question->content}}</div></td>
                             <td class="align-middle" style="word-wrap:break-word;">
-                                <div class="">
+                                <div class="d-flex">
                                     <div class="col-md-6">
-                                        <input class="form-check-input " type="checkbox" value="" id="flexCheckDefault">
-                                    </div>
-                                    <div class="">
+                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                    <label class="btn btn-outline-secondary">
+                                                        <input type="checkbox" autocomplete="off"><i class="far fa-bookmark"></i>
+                                                    </label>
+                                                </div>
+                                        </div>
+                                    <div class="col-md-6">
                                     <form action="/admin_question/delete/{{$question->id}}" method="post">
                                         {{ csrf_field() }}
-                                            <input type="submit" class="btn" value="削除"></input>
+                                            <button class="btn btn-secondary"><i class="far fa-trash-alt"></i></button>
                                     </form>
                                     </div>
                                 </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container p-5">
         <div class="mx-auto">
-            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">カート内一覧画面</h1>
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">カート内一覧</h1>
             <div class="row">
                     <!-- 商品一覧 -->
                     {{-- {{ dd($cart) }} --}}

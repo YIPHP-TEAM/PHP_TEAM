@@ -33,3 +33,13 @@
     width: 50px;
     height: 50px;
 }
+
+.img_size_4 {
+    width: 300px;
+    height: 300px;
+}
+
+.sidebar_fixed {
+    position: sticky;
+    top: 60px;
+}
