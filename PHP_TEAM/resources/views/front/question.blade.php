@@ -20,6 +20,7 @@
             <li>{{$errors->first('name')}}</li>
           @endif
           <form action="/question/save" method="POST">
+            {!! formErr('comment') !!}
           @csrf
           <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
           <textarea class="form-control" name="comment" rows="4"></textarea>
