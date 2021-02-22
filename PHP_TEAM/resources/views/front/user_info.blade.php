@@ -3,7 +3,7 @@
 @section('content')
     <div class="container p-5">
         <div class="mx-auto">
-            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー情報画面</h1>
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ユーザー情報</h1>
             <!-- ユーザー情報 -->
             <div class="px-5 pt-3">
                 <div class="row px-3">

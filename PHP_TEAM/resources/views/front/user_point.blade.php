@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container p-5">
-        <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ポイント申請画面</h1>
+        <h1 class="text-center border-bottom border-secondary pb-3 mb-5">ポイント申請</h1>
         <div class="col-md-8 mx-auto">
         <form action="point/save" method="post">
             @csrf

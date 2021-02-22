@@ -4,7 +4,7 @@
     <div class="container p-5">
         <div class="mx-auto">  
             <!-- ページタイトルとボーダー -->
-            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">商品詳細画面</h1>
+            <h1 class="text-center border-bottom border-secondary pb-3 mb-5">商品詳細</h1>
             <div class="row px-5 mx-auto">
                 <!-- 商品詳細部分_右側-->
                 <div class="col-md-8">
