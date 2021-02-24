@@ -18,7 +18,7 @@
                                     @csrf
                                         <div class="">
                                             <select class="form-control" name="quantity" min="1" max="300" value="submit">
-                                            @for ($i = $user->point; $i <= 300; $i++)
+                                            @for ($i = 1; $i <= 300; $i++)
                                                 <option value="{{ $i }}">{{ $i }}</option>
                                             @endfor
                                             </select>
