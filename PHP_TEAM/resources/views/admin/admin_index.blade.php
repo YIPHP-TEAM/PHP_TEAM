@@ -13,6 +13,7 @@
                 
             <!-- ユーザー一覧 -->
             <div class="row">
+            @if ($users->isNotEmpty())
                 <div class="mx-auto col-md-8">
                     <table class="table table-bordered text-center" style="table-layout:fixed;width:100%;">
                     <thead class="table-active">
@@ -33,6 +34,9 @@
                     @endforeach
                     </table>
                 </div>
+            @else
+            <p class="col">該当するユーザーがいません。</p>
+            @endif
             </div>
         </div>
     </div>
