@@ -35,7 +35,7 @@
                     </table>
                 </div>
             @else
-            <p class="col">該当するユーザーがいません。</p>
+            <p class="mx-auto col-md-8">該当するユーザーがいません。</p>
             @endif
             </div>
         </div>
