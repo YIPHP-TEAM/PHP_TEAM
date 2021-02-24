@@ -21,7 +21,7 @@
                                 @foreach ($cart as $item)
                                 <tbody class="table-light">
                                     <tr>
-                                    <td class="align-middle" style="word-wrap:break-word;"><a href=""><img class="w-50" src="{{asset('img/items/'.$item->options->photo_path)}}" alt=""></a></th>
+                                    <td class="align-middle" style="word-wrap:break-word;"><a href=""><img class="img_size_3" src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt=""></a></th>
                                     <td class="align-middle" style="word-wrap:break-word;">{{$item->name}}</td>
                                     <td class="align-middle" style="word-wrap:break-word;">{{$item->qty}}</td>
                                     <td class="align-middle" style="word-wrap:break-word;">{{$item->price}}</td>
