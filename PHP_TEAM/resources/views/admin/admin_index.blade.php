@@ -7,7 +7,7 @@
             <form class="row form-group mt-3 mb-5 py-2" action="{{action('Admin\UserController@index')}}" method="get">
                 <div class="col-md-8 d-flex mx-auto">
                     <input type="text" name="cond_title" value="{{$cond_title}}" class="form-control mr-4" placeholder="ワードを入力してください">
-                    <input type="submit" value="検索" class="btn btn-info">
+                    <input type="submit" value="検索" class="btn btn-secondary">
                 </div>
             </form>
                 
