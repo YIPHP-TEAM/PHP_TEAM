@@ -7,12 +7,13 @@
             <form class="row form-group mt-3 mb-5 py-2" action="{{action('Admin\UserController@index')}}" method="get">
                 <div class="col-md-8 d-flex mx-auto">
                     <input type="text" name="cond_title" value="{{$cond_title}}" class="form-control mr-4" placeholder="ワードを入力してください">
-                    <input type="submit" value="検索" class="btn btn-info">
+                    <input type="submit" value="検索" class="btn btn-secondary">
                 </div>
             </form>
                 
             <!-- ユーザー一覧 -->
             <div class="row">
+            @if ($users->isNotEmpty())
                 <div class="mx-auto col-md-8">
                     <table class="table table-bordered text-center" style="table-layout:fixed;width:100%;">
                     <thead class="table-active">
@@ -33,6 +34,9 @@
                     @endforeach
                     </table>
                 </div>
+            @else
+            <p class="mx-auto col-md-8">該当するユーザーがいません。</p>
+            @endif
             </div>
         </div>
     </div>

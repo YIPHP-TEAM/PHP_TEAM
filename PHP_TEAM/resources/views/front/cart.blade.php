@@ -14,7 +14,7 @@
                                     <div class="d-block mx-auto text-center mt-5"><img class="img_size_2 col-md-12 img-rounded" src="{{asset('storage/img/items/'.$item->options->photo_path)}}" alt="" style="object-fit: cover;"></div>
                                     <br>
                                     <div class="container px-5">
-                                        <div class="text-center border-bottom border-secondary pb-3 mb-3">商品名{{$item->name}}</div>
+                                        <div class="text-center border-bottom border-secondary pb-3 mb-3">{{$item->name}}</div>
                                         <div class="">
                                             <div class="">注文数：{{$item->qty}}</div>
                                             <div class="">必要ポイント(単価)：{{$item->price}}pt</div>
@@ -22,12 +22,12 @@
 
                                         <!-- 数量編集プルダウン -->
                                         <div class="mt-3">
-                                            <form action="/cart/edit" method="post">
+                                            <form action="/cart/edit" method="post" class="align-items-end">
                                                 @csrf
                                                 <input type="hidden" name="rowId" value="{{$item->rowId}}">
                                                 <div class="row">
                                                     <div class="col-md-2">
-                                                        <select name="cnt" style="height:43px">
+                                                        <select name="cnt" style="height:100%">
                                                             @for($i = 1; $i <= $item->options->stock; $i++)
                                                             <option value="{{ $i }}">{{ $i }}</option>
                                                             @endfor
@@ -41,7 +41,7 @@
                                         </div>
 
                                         <!-- 商品削除 -->
-                                        <div class="mt-2">
+                                        <div class="mt-3">
                                             <form action="/cart/delete" method="post">
                                                 @csrf
                                                 <input type="hidden" name="rowId" value="{{$item->rowId}}">
@@ -64,7 +64,7 @@
                             <div class="border-bottom border-secondary pb-3"><h2>合計ポイント： {{Cart::total()}}pt</h2></div>
                             <div class="mt-4">
                                 @if (Auth::user()->point >= Cart::total())
-                                <a class="btn btn-secondary border-dark" style="width:300px" href="/cart_order">購入画面へ進む</a>
+                                <a class="btn btn-secondary border-dark p-2 px-3" href="/cart_order">購入画面へ進む</a>
                                 @else
                                 ポイントが足りませんので購入できません。<br>
                                 編集で商品数を調整してください。

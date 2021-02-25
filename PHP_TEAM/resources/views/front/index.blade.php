@@ -20,7 +20,7 @@
                                 <a href="{{'/item_detail/'.$item->id}}"><img class="img_size img-rounded col-md-10 " src="{{asset('storage/img/items/'.$item->image)}}" alt="" style="object-fit: cover;"></a>
                             </div>
                             <div class="">
-                                <div class="lead">{{$item->name}}</div>
+                                <div class="">{{$item->name}}</div>
                                 <div class="">必要ポイント：{{$item->point}} pt</div>
                             </div>
                         </div>

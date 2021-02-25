@@ -67,7 +67,7 @@
                             @endforeach
                             </table>
                 @else
-                <p class="pl-3">達成項目はありません。</p>
+                <p class="pl-3 pt-5 text-center">達成項目はありません。</p>
                     @endif
                 </div>                
             </div>
