@@ -20,7 +20,11 @@
                 <br>
                 <div class="card w-100 border-0 mt-1" style="text-align:center">
                     <h6 class="mt-3">保有ポイント数</h6>
-                    <h4>{{ Auth::user()->point }} pt</h4>
+                    @if ($points->isEmpty())
+                        <h4>0 pt</h4>
+                    @else
+                        <h4>{{ Auth::user()->point }} pt</h4>
+                    @endif
                 </div>
 
                 <!-- 達成項目(ループ) -->
